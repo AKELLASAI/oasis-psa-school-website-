@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Oasis Preschool Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Lexend:wght@300;400;500;600;700&display=swap">
+<style>
+/* Layout: open-book spine — a centered reading column with sections that alternate a left "page" and right "page", tied together by the logo's arc and birds. */
+:root{
+  --bg:#fbf8fd; --surface:#ffffff; --tint:#f4eefa; --ink:#241a35; --muted:#5f5674; --line:#e6ddf0;
+  --pink:#d6157a; --violet:#6a2fb2; --sun:#f08a1c; --sky:#1b84d1; --leaf:#178a5a;
+  --pink-soft:#fde7f2; --sun-soft:#fff1e1; --sky-soft:#e5f2fc; --violet-soft:#efe7fb;
+  --display:"Marcellus","Palatino Linotype",Georgia,serif;
+  --body:"Lexend",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:18px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17121f; --surface:#211a2d; --tint:#271f35; --ink:#f2ecfa; --muted:#b9aecb; --line:#3a3049;
+  --pink:#ff5aa8; --violet:#b48cf2; --sun:#ffab52; --sky:#5eb4f2; --leaf:#4fcf93;
+  --pink-soft:#3a1a2c; --sun-soft:#3a2816; --sky-soft:#152a3c; --violet-soft:#2c2042; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17121f; --surface:#211a2d; --tint:#271f35; --ink:#f2ecfa; --muted:#b9aecb; --line:#3a3049;
+  --pink:#ff5aa8; --violet:#b48cf2; --sun:#ffab52; --sky:#5eb4f2; --leaf:#4fcf93;
+  --pink-soft:#3a1a2c; --sun-soft:#3a2816; --sky-soft:#152a3c; --violet-soft:#2c2042; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased}
+a{color:var(--violet)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.9rem,4.2vw,2.75rem);color:var(--ink)}
+h3{font-size:1.35rem}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+.lede{color:var(--muted);max-width:60ch;font-size:1.05rem}
+section{padding-block:clamp(56px,8vw,96px)}
+.sec-head{display:grid;gap:12px;margin-bottom:36px}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);min-width:0}
+.brand img{width:52px;height:auto;flex:none}
+.brand b{display:block;font-family:var(--display);font-weight:400;font-size:1.45rem;letter-spacing:.06em;color:var(--pink);line-height:1}
+.brand small{display:block;font-size:.66rem;font-weight:600;letter-spacing:.12em;color:var(--violet);text-transform:uppercase;margin-top:3px}
+nav.links{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+nav.links a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:500;padding:8px 12px;border-radius:999px}
+nav.links a:hover{background:var(--tint);color:var(--ink)}
+nav.links a.cta{background:var(--pink);color:#fff}
+nav.links a.cta:hover{background:var(--violet);color:#fff}
+.menu-btn{display:none;background:var(--tint);color:var(--ink);border:0;border-radius:12px;padding:10px 14px;font:600 .9rem var(--body);cursor:pointer}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  nav.links{display:none;position:absolute;left:0;right:0;top:100%;background:var(--surface);border-bottom:1px solid var(--line);flex-direction:column;padding:10px 20px 18px;gap:2px}
+  nav.links.open{display:flex}
+  nav.links a{padding:12px 14px}
+}
+
+/* hero */
+.hero{padding-block:clamp(40px,7vw,84px) clamp(48px,7vw,80px);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,820px);gap:clamp(28px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.4vw,4.6rem);letter-spacing:-.005em}
+.hero h1 .roots{color:var(--sun)}
+.hero h1 .wings{color:var(--violet)}
+.hero .lede{margin-top:20px;font-size:1.12rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font:600 .98rem var(--body);padding:14px 22px;border-radius:999px;border:0;cursor:pointer}
+.btn-primary{background:var(--pink);color:#fff}
+.btn-primary:hover{background:var(--violet)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--violet)}
+.facts{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:34px;color:var(--muted);font-size:.9rem}
+.facts span{display:inline-flex;align-items:center;gap:8px}
+.facts i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.hero-art{position:relative;aspect-ratio:1/1;max-width:440px;width:100%;justify-self:center}
+.hero-art .disc{position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--sun-soft),var(--pink-soft) 60%,var(--violet-soft))}
+.hero-art svg.arc{position:absolute;inset:0;width:100%;height:100%}
+.hero-art img{position:absolute;left:50%;top:52%;width:70%;transform:translate(-50%,-50%);filter:drop-shadow(0 18px 24px rgba(106,47,178,.18))}
+.bird{animation:glide 7s ease-in-out infinite}
+.bird.b2{animation-delay:-2.5s}
+@keyframes glide{0%,100%{transform:translate(0,0)}50%{transform:translate(10px,-8px)}}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.hero-art{max-width:320px;order:-1}}
+
+/* about */
+.about{background:var(--surface);border-block:1px solid var(--line)}
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:start}
+.about blockquote{margin:0;font-family:var(--display);font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.3;color:var(--violet)}
+.about blockquote::before{content:"\201C";display:block;font-size:4rem;line-height:.6;color:var(--pink)}
+.pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 28px;margin-top:28px}
+.pillar{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.pillar .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center}
+.pillar .ic svg{width:22px;height:22px}
+.pillar h3{font-family:var(--body);font-weight:600;font-size:1rem;margin-bottom:4px}
+.pillar p{color:var(--muted);font-size:.93rem}
+@media (max-width:820px){.about .wrap{grid-template-columns:1fr}}
+@media (max-width:520px){.pillars{grid-template-columns:1fr}}
+
+/* classes */
+.classes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.cls{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px 24px;display:grid;gap:14px;align-content:start;position:relative;overflow:hidden}
+.cls .step{display:flex;align-items:center;gap:10px;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.cls .step .dot{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:.85rem;letter-spacing:0}
+.cls h3{font-size:2rem}
+.cls .age{font-size:.9rem;color:var(--muted)}
+.cls ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:.93rem}
+.cls li{display:grid;grid-template-columns:18px 1fr;gap:8px}
+.cls li::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;margin-top:.6em;opacity:.55}
+.c0 .dot{background:var(--sky)} .c0 .step{color:var(--sky)}
+.c1 .dot{background:var(--sun)} .c1 .step{color:var(--sun)}
+.c2 .dot{background:var(--pink)} .c2 .step{color:var(--pink)}
+.c3 .dot{background:var(--violet)} .c3 .step{color:var(--violet)}
+.growth{display:flex;align-items:center;gap:12px;margin-top:22px;color:var(--muted);font-size:.88rem}
+.growth .bar{flex:1;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--sun),var(--pink),var(--violet))}
+@media (max-width:1000px){.classes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.classes{grid-template-columns:1fr}}
+
+/* parents */
+.parents{background:var(--tint)}
+.feat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 32px}
+.feat div{display:grid;gap:6px;align-content:start;padding-top:18px;border-top:2px solid var(--line)}
+.feat h3{font-family:var(--body);font-weight:600;font-size:1.02rem}
+.feat p{color:var(--muted);font-size:.93rem}
+@media (max-width:860px){.feat{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.feat{grid-template-columns:1fr}}
+
+
+/* van */
+.van{background:var(--surface);border-block:1px solid var(--line)}
+.routes{display:grid;grid-template-columns:minmax(0,640px);gap:20px}
+.route{border-radius:var(--r);padding:24px;display:grid;gap:14px;align-content:start}
+.route.r1{background:var(--sky-soft)} .route.r2{background:var(--pink-soft)}
+.route .tag{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.r1 .tag{color:var(--sky)} .r2 .tag{color:var(--pink)}
+.route h3{font-size:1.5rem}
+.stops{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.stops li{background:var(--surface);border-radius:999px;padding:6px 12px;font-size:.85rem}
+.route .meta{font-size:.9rem;color:var(--muted)}
+@media (max-width:760px){.routes{grid-template-columns:1fr}}
+
+/* admissions */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;display:grid;gap:8px;align-content:start;position:relative;padding-top:56px}
+.steps li::before{content:counter(s);position:absolute;top:0;left:0;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-size:1.3rem;background:var(--violet-soft);color:var(--violet)}
+.steps li:not(:last-child)::after{content:"";position:absolute;top:21px;left:52px;right:-10px;height:2px;background:var(--line)}
+.steps h3{font-family:var(--body);font-weight:600;font-size:1rem}
+.steps p{color:var(--muted);font-size:.92rem}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}.steps li::after{display:none}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--tint)}
+.contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);align-items:start}
+.cinfo{display:grid;gap:22px}
+.cinfo .row{display:grid;gap:4px}
+.cinfo .k{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cinfo .v{font-size:1.1rem;font-weight:500;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.copy{font:600 .75rem var(--body);background:var(--surface);color:var(--violet);border:1px solid var(--line);border-radius:999px;padding:4px 10px;cursor:pointer}
+.copy:hover{border-color:var(--violet)}
+form.enq{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,32px);display:grid;gap:16px}
+form.enq h3{font-size:1.6rem}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:520px){.f2{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-size:.85rem;font-weight:500;color:var(--muted)}
+input,select,textarea{font:400 1rem var(--body);color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--violet)}
+textarea{resize:vertical;min-height:84px}
+.formnote{font-size:.82rem;color:var(--muted)}
+.err{color:var(--pink);font-size:.85rem;font-weight:500}
+@media (max-width:820px){.contact .wrap{grid-template-columns:1fr}}
+
+footer{padding-block:36px;border-top:1px solid var(--line);background:var(--bg)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;color:var(--muted);font-size:.86rem}
+footer em{font-style:italic;color:var(--violet)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:.88rem;font-weight:500;z-index:50}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Oasis Preschool Academy home">
+      <img src="data:image/webp;base64,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" alt="">
+      <span><b>OASIS</b><small>Preschool Academy</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <nav class="links" id="navLinks" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#classes">Classes</a>
+      <a href="#van">School van</a>
+      <a href="#admissions">Admissions</a>
+      <a class="cta" href="#contact">Enquire now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Admissions open · 2026–27</p>
+        <h1 style="margin-top:14px">Growing <span class="roots">roots</span> to flying <span class="wings">wings</span></h1>
+        <p class="lede">A warm, joyful preschool in Kurmannapalem, Visakhapatnam, for children in Playgroup, Nursery, LKG and UKG. Small classes, caring teachers and a parent app that keeps you close to your child's day.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Book a school visit</a>
+          <a class="btn btn-ghost" href="#classes">Explore our classes</a>
+        </div>
+        <div class="facts">
+          <span><i style="background:var(--sun)"></i>Playgroup · Nursery · LKG · UKG</span>
+          <span><i style="background:var(--pink)"></i>School van: Kurmannapalem to Duvvada</span>
+          <span><i style="background:var(--violet)"></i>Fees payable by UPI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">About Oasis</p>
+        <h2>The first school your child will remember</h2>
+        <blockquote style="margin-top:22px">Strong roots first, so little ones can fly with confidence.</blockquote>
+      </div>
+      <div>
+        <p class="lede">Oasis Preschool Academy is a neighbourhood preschool in Kurmannapalem, close to Gajuwaka and Duvvada. We care for children in their earliest school years, when habits, curiosity and confidence take shape. Every day mixes play, stories, songs, early letters and numbers, art and outdoor time.</p>
+        <div class="pillars">
+          <div class="pillar">
+            <span class="ic" style="background:var(--sun-soft);color:var(--sun)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21V11"/><path d="M12 11c0-4 3-6 7-6 0 4-3 6-7 6Z"/><path d="M12 14c0-3-2.5-5-6-5 0 3 2.5 5 6 5Z"/></svg></span>
+            <div><h3>Learning through play</h3><p>Hands-on activity kits, sensory play, rhymes and stories at every level.</p></div>
+          </div>
+          <div class="pillar">
+            <span class="ic" style="background:var(--pink-soft);color:var(--pink)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></span>
+            <div><h3>Personal attention</h3><p>Small classes so teachers know each child, their friends and their pace.</p></div>
+          </div>
+          <div class="pillar">
+            <span class="ic" style="background:var(--violet-soft);color:var(--violet)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4Z"/><path d="M20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6Z"/></svg></span>
+            <div><h3>Ready for Class 1</h3><p>Steady steps in reading, writing and numbers from Playgroup through UKG.</p></div>
+          </div>
+          <div class="pillar">
+            <span class="ic" style="background:var(--sky-soft);color:var(--sky)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><h3>Festivals and events</h3><p>Independence Day, festivals and term activities celebrated together.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="classes">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Classes</p>
+        <h2>Four steps, one growing journey</h2>
+        <p class="lede">Each class builds on the last, from first play and making friends to reading simple words and counting with confidence.</p>
+      </div>
+      <div class="classes">
+        <article class="cls c0">
+          <div class="step"><span class="dot">1</span>First step</div>
+          <h3>Playgroup</h3>
+          <p class="age">1½ to 3 years</p>
+          <ul>
+            <li>A gentle first time away from home</li>
+            <li>Free play, music and movement</li>
+            <li>Sand, water, clay and sensory play</li>
+            <li>Talking, listening and simple rhymes</li>
+          </ul>
+        </article>
+        <article class="cls c1">
+          <div class="step"><span class="dot">2</span>Second step</div>
+          <h3>Nursery</h3>
+          <p class="age">3 to 4 years</p>
+          <ul>
+            <li>Settling in, routines and making friends</li>
+            <li>Rhymes, stories and picture talk</li>
+            <li>Colours, shapes and sensory play</li>
+            <li>Early counting and fine-motor activities</li>
+          </ul>
+        </article>
+        <article class="cls c2">
+          <div class="step"><span class="dot">3</span>Third step</div>
+          <h3>LKG</h3>
+          <p class="age">4 to 5 years</p>
+          <ul>
+            <li>Letters, phonics and first sounds</li>
+            <li>Numbers and simple counting games</li>
+            <li>Drawing, colouring and craft</li>
+            <li>Speaking, sharing and show-and-tell</li>
+          </ul>
+        </article>
+        <article class="cls c3">
+          <div class="step"><span class="dot">4</span>Fourth step</div>
+          <h3>UKG</h3>
+          <p class="age">5 to 6 years</p>
+          <ul>
+            <li>Reading simple words and sentences</li>
+            <li>Writing practice and number work</li>
+            <li>Homework that builds good habits</li>
+            <li>Report cards and Class 1 readiness</li>
+          </ul>
+        </article>
+      </div>
+      <div class="growth" aria-hidden="true"><span>Roots</span><span class="bar"></span><span>Wings</span></div>
+    </div>
+  </section>
+
+  <section class="parents">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">For parents</p>
+        <h2>Stay close to your child's day</h2>
+        <p class="lede">Oasis parents get their own app on Android or iPhone. Sign in with your mobile number to see what matters, any time.</p>
+      </div>
+      <div class="feat">
+        <div><h3>Daily attendance</h3><p>See whether your child was marked present, absent or late, with a monthly calendar.</p></div>
+        <div><h3>Homework</h3><p>Homework for your child's class, with due dates, as soon as the teacher posts it.</p></div>
+        <div><h3>Fees and receipts</h3><p>Check what is due, pay by UPI and get a receipt once the office confirms payment.</p></div>
+        <div><h3>School van</h3><p>Your child's route, pickup point, drop time and the driver's phone number.</p></div>
+        <div><h3>Holidays and notices</h3><p>Upcoming holidays and school announcements in one place.</p></div>
+        <div><h3>Report cards and gallery</h3><p>Progress reports and photos from class activities and celebrations.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="van" id="van">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">School van</p>
+        <h2>Safe rides from your neighbourhood</h2>
+        <p class="lede">Our school van runs from Kurmannapalem to Duvvada, stopping at Sector 7, Rajeev Nagar, Sector 6, Simon Nagar, Vadlapudi and Bharat Nagar. The van has a regular driver whose number parents can see in the app.</p>
+      </div>
+      <div class="routes">
+        <div class="route r2">
+          <span class="tag">Current route</span>
+          <h3>Kurmannapalem · Duvvada</h3>
+          <ul class="stops"><li>Sector 7</li><li>Rajeev Nagar</li><li>Sector 6</li><li>Simon Nagar</li><li>Vadlapudi</li><li>Bharat Nagar</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="admissions">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Admissions</p>
+        <h2>Joining Oasis in four steps</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Get in touch</h3><p>Call, WhatsApp or send the enquiry form below. We'll suggest a time to visit.</p></li>
+        <li><h3>Visit the school</h3><p>Bring your child, see the classrooms and meet the teachers.</p></li>
+        <li><h3>Fill the admission form</h3><p>Your child's name and date of birth, parents' names, phone numbers and address, and whether you need the van.</p></li>
+        <li><h3>Confirm the seat</h3><p>Pay the admission fee. You'll get your parent app login before the first day.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="cinfo">
+        <div class="sec-head" style="margin-bottom:6px">
+          <p class="eyebrow">Contact</p>
+          <h2>Come and see us</h2>
+        </div>
+        <div class="row"><span class="k">Address</span><span class="v">Kurmannapalem, Visakhapatnam,<br>Andhra Pradesh 530046</span>
+          <a href="https://maps.google.com/?q=Kurmannapalem+Visakhapatnam+530046" target="_blank" rel="noopener" style="font-size:.9rem">Open in Google Maps</a></div>
+        <div class="row"><span class="k">Phone</span>
+          <span class="v"><span>83745 20766</span><button class="copy" type="button" data-copy="8374520766">Copy</button></span>
+          <span class="v"><span>83745 20722</span><button class="copy" type="button" data-copy="8374520722">Copy</button></span></div>
+        <div class="row"><span class="k">Email</span><span class="v"><span>oasispsa@gmail.com</span><button class="copy" type="button" data-copy="oasispsa@gmail.com">Copy</button></span></div>
+      </div>
+
+      <form class="enq" id="enqForm" novalidate>
+        <h3>Admission enquiry</h3>
+        <div class="f2">
+          <label for="pName">Parent's name<input id="pName" autocomplete="name" placeholder="e.g. Lakshmi Rao" required></label>
+          <label for="pPhone">Mobile number<input id="pPhone" inputmode="tel" autocomplete="tel" placeholder="10-digit mobile" required></label>
+        </div>
+        <div class="f2">
+          <label for="cName">Child's name<input id="cName" placeholder="e.g. Aarav" required></label>
+          <label for="cClass">Class
+            <select id="cClass"><option>Playgroup</option><option>Nursery</option><option>LKG</option><option>UKG</option><option>Not sure yet</option></select></label>
+        </div>
+        <div class="f2">
+          <label for="cDob">Child's date of birth<input id="cDob" type="date"></label>
+          <label for="cVan">School van
+            <select id="cVan"><option>Not needed</option><option>Needed (Kurmannapalem to Duvvada route)</option><option>Not sure</option></select></label>
+        </div>
+        <label for="msg">Message (optional)<textarea id="msg" placeholder="Questions, or a good time to visit"></textarea></label>
+        <p class="err" id="formErr" hidden></p>
+        <p class="formnote" id="waLinkRow" hidden>WhatsApp didn't open? <a id="waLink" href="#" target="_blank" rel="noopener">Tap here to open it</a>.</p>
+        <button class="btn btn-primary" type="submit" style="justify-self:start">Send on WhatsApp</button>
+        <p class="formnote">This opens WhatsApp with your enquiry written out, ready to send to the school on 83745 20722. Nothing is sent until you press send in WhatsApp.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Oasis Preschool Academy · Kurmannapalem, Visakhapatnam</span>
+    <em>…Growing roots to flying wings</em>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn'), nav=document.getElementById('navLinks');
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+
+  var toast=document.getElementById('toast'),tt;
+  function show(m){toast.textContent=m;toast.hidden=false;clearTimeout(tt);tt=setTimeout(function(){toast.hidden=true},2200)}
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.dataset.copy;
+      function fallback(){var s=b.previousElementSibling,r=document.createRange();r.selectNodeContents(s);var sel=getSelection();sel.removeAllRanges();sel.addRange(r);show('Selected. Press Ctrl+C or Cmd+C to copy')}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(function(){show('Copied '+v)},fallback)}else fallback();
+    });
+  });
+
+  var f=document.getElementById('enqForm'),err=document.getElementById('formErr');
+  function val(id){return document.getElementById(id).value.trim()}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var p=val('pName'),ph=val('pPhone').replace(/\D/g,''),c=val('cName');
+    var miss=[];if(!p)miss.push("parent's name");if(ph.length<10)miss.push('a 10-digit mobile number');if(!c)miss.push("child's name");
+    if(miss.length){err.textContent='Please add '+miss.join(', ')+'.';err.hidden=false;return}
+    err.hidden=true;
+    var dob=val('cDob'),lines=['Hello Oasis Preschool Academy, I would like to enquire about admission.','',
+      "Parent: "+p,'Mobile: '+ph,"Child: "+c,'Class: '+val('cClass')];
+    if(dob)lines.push('Date of birth: '+dob.split('-').reverse().join('-'));
+    lines.push('School van: '+val('cVan'));
+    if(val('msg'))lines.push('','Message: '+val('msg'));
+    var a=document.createElement('a');
+    a.href='https://wa.me/918374520722?text='+encodeURIComponent(lines.join('\n'));
+    var wl=document.getElementById('waLink');wl.href=a.href;document.getElementById('waLinkRow').hidden=false;a.target='_blank';a.rel='noopener';document.body.appendChild(a);try{a.click()}catch(x){}a.remove();
+    show('Opening WhatsApp…');
+  });
+})();
+</script>
+
+</body>
+</html>
