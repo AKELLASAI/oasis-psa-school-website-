@@ -38,3 +38,11 @@ Phones on the same Wi-Fi can open the address shown in the Terminal window, e.g.
 
 ## Screens
 Dashboard · Attendance · Homework · Students · School details · Classes · Sections · Fee types · Screen master · Role master · User master
+
+## Chatbot ("Ask us" button)
+A help chatbot sits in the bottom-right corner of the public website. It runs entirely in the browser: no server, API key or cost, so it also works if the site is hosted without `server.js`.
+- Answers questions about classes and ages, admissions 2026–27, documents, fees (types and UPI payment), the school van route and stops, location, contact details, visits, the parent app and login.
+- Tell it a child's age ("2 and half years", "30 months", "born 15-06-2022") and it suggests the right class.
+- Understands small spelling mistakes, and offers WhatsApp, call and enquiry-form buttons. Anything it can't answer goes to WhatsApp with the question filled in.
+- Hidden inside the school app (`#/login`, `#/app`).
+- To change its answers, edit the "school facts" and "answers" sections in the chatbot `<script>` at the bottom of `index.html`.

@@ -1015,5 +1015,321 @@ dialog.dlg::backdrop{background:rgba(23,18,31,.45)}
 })();
 </script>
 
+<!-- ================= Oasis chatbot (runs fully in the browser, no server or API key needed) ================= -->
+<style>
+:root{--cb-pink:var(--pink);--cb-violet:var(--violet)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--cb-pink:color-mix(in srgb,var(--pink) 70%,#000);--cb-violet:color-mix(in srgb,var(--violet) 62%,#000)}}
+:root[data-theme="dark"]{--cb-pink:color-mix(in srgb,var(--pink) 70%,#000);--cb-violet:color-mix(in srgb,var(--violet) 62%,#000)}
+.cb-fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:45;display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 18px 13px 15px;background:var(--cb-pink);color:#fff;font:600 .95rem var(--body);cursor:pointer;box-shadow:0 10px 28px rgba(106,47,178,.28)}
+.cb-fab:hover{background:var(--cb-violet)}
+.cb-fab svg{width:22px;height:22px;flex:none}
+.cb-fab[aria-expanded="true"]{background:var(--cb-violet)}
+.cb-panel{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(86px + env(safe-area-inset-bottom,0px));z-index:46;width:min(380px,calc(100vw - 36px));height:min(600px,calc(100vh - 130px));height:min(600px,calc(100dvh - 130px));display:flex;flex-direction:column;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 70px rgba(36,26,53,.25);overflow:hidden}
+.cb-head{display:flex;align-items:center;gap:12px;padding:14px 14px 14px 16px;background:linear-gradient(120deg,var(--cb-pink),var(--cb-violet));color:#fff;flex:none}
+.cb-ava{width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;overflow:hidden}
+.cb-ava img{width:30px;height:30px;object-fit:contain}
+.cb-head .t{flex:1;min-width:0;line-height:1.25}
+.cb-head .t b{display:block;font-weight:600;font-size:1rem}
+.cb-head .t small{display:block;font-size:.78rem;opacity:.9}
+.cb-hbtn{background:rgba(255,255,255,.18);color:#fff;border:0;border-radius:10px;width:34px;height:34px;display:grid;place-items:center;cursor:pointer;flex:none}
+.cb-hbtn:hover{background:rgba(255,255,255,.3)}
+.cb-hbtn svg{width:18px;height:18px}
+.cb-log{flex:1;overflow-y:auto;padding:16px 14px 8px;display:flex;flex-direction:column;gap:10px;background:var(--bg);overscroll-behavior:contain}
+.cb-msg{max-width:88%;padding:10px 13px;border-radius:16px;font-size:.92rem;line-height:1.5;overflow-wrap:anywhere}
+.cb-msg.bot{align-self:flex-start;background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:6px}
+.cb-msg.me{align-self:flex-end;background:var(--cb-violet);color:#fff;border-bottom-right-radius:6px;white-space:pre-wrap}
+.cb-msg p+p,.cb-msg p+ul,.cb-msg ul+p,.cb-msg p+ol,.cb-msg ol+p{margin-top:8px}
+.cb-msg ul,.cb-msg ol{margin:6px 0 0;padding-left:20px}
+.cb-msg li{margin:2px 0}
+.cb-msg a{color:var(--violet);font-weight:500}
+.cb-msg b{font-weight:600}
+.cb-acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.cb-acts a,.cb-acts button{display:inline-flex;align-items:center;text-decoration:none;font:600 .82rem var(--body);padding:7px 12px;border-radius:999px;background:var(--cb-pink);color:#fff;border:0;cursor:pointer}
+.cb-acts a.alt,.cb-acts button.alt{background:var(--tint);color:var(--ink)}
+.cb-acts a:hover,.cb-acts button:hover{background:var(--cb-violet);color:#fff}
+.cb-typing{align-self:flex-start;display:inline-flex;gap:4px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;border-bottom-left-radius:6px}
+.cb-typing i{width:7px;height:7px;border-radius:50%;background:var(--muted);opacity:.5;animation:cbDot 1s infinite}
+.cb-typing i:nth-child(2){animation-delay:.15s}.cb-typing i:nth-child(3){animation-delay:.3s}
+@keyframes cbDot{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-4px);opacity:1}}
+.cb-chips{display:flex;gap:6px;padding:8px 12px;overflow-x:auto;flex:none;background:var(--bg);border-top:1px solid var(--line);scrollbar-width:thin}
+.cb-chips:empty{display:none}
+.cb-chips button{flex:none;font:500 .82rem var(--body);padding:7px 12px;border-radius:999px;background:var(--surface);color:var(--violet);border:1.5px solid var(--line);cursor:pointer;white-space:nowrap}
+.cb-chips button:hover{border-color:var(--violet)}
+.cb-form{display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--surface);border-top:1px solid var(--line);flex:none;margin:0}
+.cb-form input{flex:1;min-width:0;width:auto;font:400 16px var(--body);padding:10px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.cb-form input:focus{outline:none;border-color:var(--violet)}
+.cb-form button{width:44px;height:44px;border-radius:50%;border:0;background:var(--cb-pink);color:#fff;display:grid;place-items:center;cursor:pointer;flex:none}
+.cb-form button:hover{background:var(--cb-violet)}
+.cb-form button svg{width:20px;height:20px}
+.cb-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.cb-note{font-size:.72rem;color:var(--muted);text-align:center;padding:0 12px 4px;background:var(--surface)}
+body.app-mode .cb-fab,body.app-mode .cb-panel{display:none!important}
+@media (max-width:520px){
+  .cb-panel{right:0;left:0;bottom:0;width:100%;height:88vh;height:88dvh;border-radius:22px 22px 0 0;border-bottom:0}
+  .cb-fab .lbl{display:none}
+  .cb-fab{padding:15px}
+  body.cb-open .cb-fab{display:none}
+  footer .wrap{padding-bottom:64px}
+}
+@media (prefers-reduced-motion:reduce){.cb-typing i{animation:none}}
+</style>
+
+<button class="cb-fab" id="cbFab" type="button" aria-controls="cbPanel" aria-expanded="false" aria-label="Chat with the Oasis helper">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg>
+  <span class="lbl">Ask us</span>
+</button>
+<div class="cb-panel" id="cbPanel" role="dialog" aria-labelledby="cbTitle" hidden>
+  <div class="cb-head">
+    <span class="cb-ava"><img src="logo-icon.png" alt=""></span>
+    <div class="t"><b id="cbTitle">Oasis helper</b><small>Quick answers about our school</small></div>
+    <button class="cb-hbtn" id="cbRestart" type="button" aria-label="Start a new chat" title="Start a new chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></button>
+    <button class="cb-hbtn" id="cbClose" type="button" aria-label="Close chat" title="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="cb-log" id="cbLog" role="log" aria-live="polite" aria-label="Chat messages"></div>
+  <div class="cb-chips" id="cbChips" aria-label="Suggested questions"></div>
+  <form class="cb-form" id="cbForm" autocomplete="off" novalidate>
+    <label class="cb-sr" for="cbInput">Type your question</label>
+    <input id="cbInput" type="text" maxlength="300" enterkeyhint="send" placeholder="Type your question…">
+    <button type="submit" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </form>
+  <p class="cb-note">Automatic answers. For anything else, call or WhatsApp the office.</p>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var fab=document.getElementById('cbFab'),panel=document.getElementById('cbPanel'),log=document.getElementById('cbLog'),
+      chipsEl=document.getElementById('cbChips'),form=document.getElementById('cbForm'),input=document.getElementById('cbInput');
+  if(!fab||!panel)return;
+
+  /* ---------- school facts (keep in sync with the page) ---------- */
+  var PHONE1='83745 20766',PHONE2='83745 20722',TEL1='tel:+918374520766',TEL2='tel:+918374520722',
+      EMAIL='oasispsa@gmail.com',WA_NUM='918374520722',
+      MAPS='https://maps.google.com/?q=Kurmannapalem+Visakhapatnam+530046',
+      ADDRESS='Kurmannapalem, Visakhapatnam, Andhra Pradesh 530046';
+  var CLASSES=[
+    {key:'playgroup',name:'Playgroup',age:'1½ to 3 years',min:1.5,max:3,items:['A gentle first time away from home','Free play, music and movement','Sand, water, clay and sensory play','Talking, listening and simple rhymes']},
+    {key:'nursery',name:'Nursery',age:'3 to 4 years',min:3,max:4,items:['Settling in, routines and making friends','Rhymes, stories and picture talk','Colours, shapes and sensory play','Early counting and fine-motor activities']},
+    {key:'lkg',name:'LKG',age:'4 to 5 years',min:4,max:5,items:['Letters, phonics and first sounds','Numbers and simple counting games','Drawing, colouring and craft','Speaking, sharing and show-and-tell']},
+    {key:'ukg',name:'UKG',age:'5 to 6 years',min:5,max:6,items:['Reading simple words and sentences','Writing practice and number work','Homework that builds good habits','Report cards and Class 1 readiness']}
+  ];
+  var STOPS=[['Kurmannapalem',['kurmannapalem','kurmanapalem']],['Sector 7',['sector7','sec7']],['Rajeev Nagar',['rajeevnagar','rajivnagar']],['Sector 6',['sector6','sec6']],
+             ['Simon Nagar',['simonnagar']],['Vadlapudi',['vadlapudi']],['Bharat Nagar',['bharatnagar','bharathnagar']],['Duvvada',['duvvada','duvada']]];
+
+  /* ---------- helpers ---------- */
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function waLink(text){return 'https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(text)}
+  function ext(href,label,alt){return '<a href="'+esc(href)+'" target="_blank" rel="noopener"'+(alt?' class="alt"':'')+'>'+esc(label)+'</a>'}
+  function tel(href,label,alt){return '<a href="'+esc(href)+'"'+(alt?' class="alt"':'')+'>'+esc(label)+'</a>'}
+  function act(name,label,alt){return '<button type="button" data-cb-act="'+esc(name)+'"'+(alt?' class="alt"':'')+'>'+esc(label)+'</button>'}
+  function acts(){return '<div class="cb-acts">'+Array.prototype.slice.call(arguments).join('')+'</div>'}
+  var CALL=function(alt){return tel(TEL1,'Call '+PHONE1,alt)};
+  var WA=function(q,alt){return ext(waLink(q||'Hello Oasis Preschool Academy, I have a question.'),'WhatsApp us',alt)};
+  var ENQ=function(alt){return act('enquire','Fill the enquiry form',alt)};
+  function contactLine(){return '<p>Call <a href="'+TEL1+'">'+PHONE1+'</a> or <a href="'+TEL2+'">'+PHONE2+'</a>, or WhatsApp us on '+PHONE2+'.</p>'}
+  function classOfAge(a){for(var i=0;i<CLASSES.length;i++)if(a>=CLASSES[i].min&&a<CLASSES[i].max)return CLASSES[i];return null}
+  function fmtAge(a){var y=Math.floor(a+1e-9),m=Math.round((a-y)*12);if(m===12){y++;m=0}
+    return (y?y+' year'+(y===1?'':'s'):'')+(y&&m?' ':'')+(m?m+' month'+(m===1?'':'s'):'')||'under a month'}
+
+  /* ---------- text normalising + light typo fixing ---------- */
+  var VOCAB=('admission admissions admit enquiry inquiry fees fee tuition payment transport school class classes nursery playgroup ukg lkg kindergarten '+
+    'timings timing address location contact phone number whatsapp email teacher teachers safety curriculum syllabus activities festival festivals '+
+    'holiday holidays uniform books attendance homework report login password visit tour route stops pickup driver months years old daughter '+
+    'hello thanks thank documents certificate eligibility age join apply van bus seats available vacancy').split(' ');
+  function lev(a,b){if(Math.abs(a.length-b.length)>2)return 9;var p=[],i,j;for(j=0;j<=b.length;j++)p[j]=j;
+    for(i=1;i<=a.length;i++){var prev=p[0];p[0]=i;for(j=1;j<=b.length;j++){var t=p[j];p[j]=Math.min(p[j]+1,p[j-1]+1,prev+(a[i-1]===b[j-1]?0:1));prev=t}}return p[b.length]}
+  var COMMON=('book feel free call time come some then what when where with have need does your this that from about there they their would like want child kids much '+
+    'many here near into also more date born year month name send show tell give know long open read write learn play stop home good well fine area city meet mail fair '+
+    'pass seat full same sure please could should which while week days sons boys girl girls baby mother father mom dad wife info details clear class').split(' ');
+  function fixWord(w){if(w.length<4||/\d/.test(w)||VOCAB.indexOf(w)>=0||COMMON.indexOf(w)>=0)return w;var best=w,bd=w.length>=7?2:1;
+    for(var i=0;i<VOCAB.length;i++){var d=lev(w,VOCAB[i]);if(d<=bd&&(d<bd||best===w)){best=VOCAB[i];bd=d;if(d===0)break}}return best}
+  function norm(s){
+    s=String(s).toLowerCase().replace(/[‘’`]/g,"'").replace(/½/g,'.5').replace(/(\d)\s+\.5/g,'$1.5').replace(/(\d)\s*1\/2/g,'$1.5');
+    s=s.replace(/[^a-z0-9.'\/\- ]+/g,' ').replace(/\s+/g,' ').trim();
+    return s.split(' ').map(fixWord).join(' ');
+  }
+
+  /* ---------- age understanding ---------- */
+  function parseAge(t,bare){
+    var m,a=null,now=new Date();
+    t=t.replace(/(\d+(?:\.\d+)?)\s*(?:and\s*(?:a\s*)?half|n\s*half)/g,function(_,n){return String(+n+.5)});
+    if((m=/(\d{1,2})\s*(?:years?|yrs?|yr|y)\s*(?:and\s*)?(\d{1,2})\s*(?:months?|mon|mons|mnths?|m)\b/.exec(t)))a=+m[1]+ +m[2]/12;
+    else if((m=/(\d{1,3})\s*(?:months?|mons?|mnths?)\b/.exec(t)))a=+m[1]/12;
+    else if((m=/(\d{1,2}(?:\.\d+)?)\s*(?:-|\s)?(?:years?|yrs?|yr|y\/o|yo)\b/.exec(t)))a=+m[1];
+    else if((m=/(\d{1,2}(?:\.\d+)?)\s*(?:years?\s*)?old\b/.exec(t)))a=+m[1];
+    else if((m=/\bage(?:d|\s*is)?\s*(?:of\s*)?(\d{1,2}(?:\.\d+)?)\b/.exec(t)))a=+m[1];
+    else if((m=/\b(\d{1,2})[\/\-.](\d{1,2})[\/\-.](\d{4})\b/.exec(t))){var d=new Date(+m[3],+m[2]-1,+m[1]);if(+m[2]>=1&&+m[2]<=12&&!isNaN(d))a=(now-d)/31557600000}
+    else if((m=/\b(\d{4})-(\d{1,2})-(\d{1,2})\b/.exec(t))){var d2=new Date(+m[1],+m[2]-1,+m[3]);if(+m[2]>=1&&+m[2]<=12&&!isNaN(d2))a=(now-d2)/31557600000}
+    else if((m=/\bborn\s*(?:in|on)?\s*(?:[a-z]+\s+)?((?:19|20)\d{2})\b/.exec(t)))a=now.getFullYear()-(+m[1])+((now.getMonth()-6)/12);
+    else if((m=/\b(?:son|daughter|child|kid|baby|boy|girl|he|she)\b.*\b(?:is|turns|turning|turned)\s+(\d{1,2}(?:\.\d+)?)\b/.exec(t)))a=+m[1];
+    else if(bare&&(m=/^\s*(\d{1,2}(?:\.\d+)?)\s*$/.exec(t)))a=+m[1];
+    if(a==null||isNaN(a)||a<0||a>14)return null;
+    return a;
+  }
+  function ageAnswer(a){
+    var c=classOfAge(a),s='<p>At <b>'+esc(fmtAge(a))+'</b>, ';
+    if(c)return {html:s+'your child fits our <b>'+c.name+'</b> class ('+c.age+').</p><p>The office confirms the final class from the date of birth when you visit.</p>'+acts(ENQ(),WA('Hello Oasis Preschool Academy, I would like to enquire about '+c.name+' admission for my child ('+fmtAge(a)+').',true)),
+      chips:['What does '+c.name+' learn?','Admission steps','School van']};
+    if(a<1.5)return {html:s+'your child is a little young for now. Playgroup starts at <b>1½ years</b>.</p><p>You are welcome to enquire early and visit with your child.</p>'+acts(ENQ(),CALL(true)),chips:['Classes and ages','Book a visit']};
+    return {html:s+'your child is ready for <b>Class 1</b>. Oasis is a preschool, so our oldest class is UKG (5 to 6 years).</p><p>Please call the office if you would like advice.</p>'+acts(CALL(),WA(null,true)),chips:['Classes and ages','Contact']};
+  }
+  function classDetail(c){
+    return {html:'<p><b>'+c.name+'</b> is for children aged <b>'+c.age+'</b>.</p><ul>'+c.items.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>'+acts(ENQ(),tel('#classes','See all classes',true)),
+      chips:['Which class for my child?','Admission steps','Fees']};
+  }
+
+  /* ---------- answers ---------- */
+  var MAIN_CHIPS=['Classes and ages','Admission steps','School van','Fees','Book a visit','Contact'];
+  var A={
+    welcome:function(){return {html:'<p>Hello! I am the Oasis helper.</p><p>Ask me about our classes, admissions, the school van, fees or how to reach us. You can also tell me your child\'s age and I will suggest a class.</p>',chips:MAIN_CHIPS}},
+    greet:function(){return {html:'<p>Hello! How can I help you today? You can ask about classes, admissions, the van, fees or visiting the school.</p>',chips:MAIN_CHIPS}},
+    thanks:function(){return {html:'<p>You are welcome! Is there anything else you would like to know?</p>',chips:MAIN_CHIPS}},
+    bye:function(){return {html:'<p>Thank you for chatting with us. We hope to see you and your little one at Oasis soon!</p>'+acts(ENQ(),WA(null,true)),chips:['Book a visit','Contact']}},
+    help:function(){return {html:'<p>I can help with:</p><ul><li>Classes and the right class for your child\'s age</li><li>Admissions for 2026–27</li><li>The school van route</li><li>Fees and payment</li><li>Address, phone and visiting the school</li><li>The parent app and staff login</li></ul>',chips:MAIN_CHIPS}},
+    classes:function(){return {html:'<p>We have four classes:</p><ul>'+CLASSES.map(function(c){return '<li><b>'+c.name+'</b> – '+c.age+'</li>'}).join('')+'</ul><p>Tell me your child\'s age (for example <i>3 years</i> or <i>2 years 6 months</i>) and I will suggest the right class.</p>',
+      chips:['Which class for my child?','What does LKG learn?','Admission steps']}},
+    whichclass:function(){S.await='age';return {html:'<p>How old is your child? You can type something like <i>3 years</i>, <i>2.5 years</i>, <i>30 months</i> or the date of birth (<i>15-06-2022</i>).</p>',chips:['2 years','3 years','4 years','5 years']}},
+    admissions:function(){return {html:'<p>Admissions are <b>open for 2026–27</b>. Joining Oasis takes four steps:</p><ol><li><b>Get in touch</b> – call, WhatsApp or send the enquiry form.</li><li><b>Visit the school</b> – bring your child, see the classrooms and meet the teachers.</li><li><b>Fill the admission form</b>.</li><li><b>Confirm the seat</b> – pay the admission fee. You get your parent app login before the first day.</li></ol>'+acts(ENQ(),WA('Hello Oasis Preschool Academy, I would like to enquire about admission for 2026–27.',true),CALL(true)),
+      chips:['Documents needed','Which class for my child?','Fees']}},
+    documents:function(){return {html:'<p>The admission form asks for:</p><ul><li>Your child\'s name and date of birth</li><li>Parents\' names, phone numbers and address</li><li>Whether you need the school van</li></ul><p>If any certificates or photos are needed, the office will tell you when you visit.</p>'+acts(ENQ(),CALL(true)),chips:['Admission steps','Fees','Book a visit']}},
+    seats:function(){return {html:'<p>Admissions for 2026–27 are open. Seats depend on the class, so please check with the office for the class you want.</p>'+contactLine()+acts(WA('Hello Oasis Preschool Academy, are seats available for my child?'),CALL(true)),chips:['Admission steps','Classes and ages']}},
+    fees:function(){return {html:'<p>Fees depend on the class and on whether your child uses the van. The fee types are:</p><ul><li>Admission fee (one time)</li><li>Tuition fee (monthly)</li><li>School van fee (monthly, if used)</li><li>Books and uniform (yearly)</li><li>Activity fee (per term)</li></ul><p>Fees can be paid by <b>UPI</b>, and you get a receipt once the office confirms payment. For the exact amounts, please ask the office.</p>'+acts(WA('Hello Oasis Preschool Academy, could you share the fee details for admission?'),CALL(true)),
+      chips:['Admission steps','School van','Book a visit']}},
+    van:function(stop){var head=stop?'<p>Yes, our van stops at <b>'+esc(stop)+'</b>.</p>':'';
+      return {html:head+'<p>The school van runs from <b>Kurmannapalem to Duvvada</b>, stopping at:</p><ul>'+STOPS.slice(1,7).map(function(s){return '<li>'+s[0]+'</li>'}).join('')+'</ul><p>The van has a regular driver, and parents can see the route, pickup point, drop time and the driver\'s number in the parent app.</p>'+(stop?'':'<p>If your area is not listed, call us and we will tell you whether a pickup is possible.</p>')+acts(CALL(),tel('#van','See the route',true)),
+      chips:['Fees','Admission steps','Contact']}},
+    timings:function(){return {html:'<p>I do not have the daily school timings here. The office will be happy to share them.</p>'+contactLine()+acts(CALL(),WA('Hello Oasis Preschool Academy, could you share the school timings?',true)),chips:['Book a visit','Admission steps']}},
+    location:function(){return {html:'<p>We are at <b>'+esc(ADDRESS)+'</b>, close to Gajuwaka and Duvvada.</p>'+acts(ext(MAPS,'Open in Google Maps'),CALL(true)),chips:['Book a visit','School van','Contact']}},
+    contact:function(){return {html:'<p>You can reach the school office here:</p><ul><li>Phone: <a href="'+TEL1+'">'+PHONE1+'</a>, <a href="'+TEL2+'">'+PHONE2+'</a></li><li>WhatsApp: '+PHONE2+'</li><li>Email: <a href="mailto:'+EMAIL+'">'+EMAIL+'</a></li><li>Address: '+esc(ADDRESS)+'</li></ul>'+acts(CALL(),WA(null,true),ext(MAPS,'Directions',true)),chips:['Book a visit','Admission steps']}},
+    visit:function(){return {html:'<p>We would love to show you around! Bring your child to see the classrooms and meet the teachers.</p><p>Send the enquiry form or message us with a good time to visit, and we will confirm.</p>'+acts(ENQ(),WA('Hello Oasis Preschool Academy, I would like to book a school visit.',true),CALL(true)),chips:['Location','Admission steps']}},
+    parentapp:function(){return {html:'<p>Oasis parents get their own app on Android or iPhone with:</p><ul><li>Daily attendance with a monthly calendar</li><li>Homework with due dates</li><li>Fees, UPI payment and receipts</li><li>School van route, pickup and driver\'s number</li><li>Holidays and notices</li><li>Report cards and the photo gallery</li></ul><p>You get your login once admission is confirmed.</p>',chips:['Admission steps','Staff login']}},
+    login:function(){return {html:'<p>Teachers, office staff and registered parents can sign in with their registered email. A 6-digit code is emailed to you; there is no password.</p><p>If your email is not registered, please contact the school office.</p>'+acts(act('login','Go to login'),CALL(true)),chips:['Contact']}},
+    teachers:function(){return {html:'<p>We keep <b>classes small</b> so teachers know each child, their friends and their pace. Children get personal attention, and parents can follow the day through the parent app.</p>'+acts(act('enquire','Book a visit to meet them')),chips:['Classes and ages','Book a visit']}},
+    curriculum:function(){return {html:'<p>Children learn through play: hands-on activity kits, sensory play, rhymes and stories at every level. Step by step from Playgroup to UKG they build reading, writing and number skills, ready for Class 1.</p><p>We also celebrate Independence Day, festivals and term activities together.</p>',chips:['What does UKG learn?','Classes and ages','Book a visit']}},
+    holidays:function(){return {html:'<p>Holidays and school notices are shared with parents in the parent app. For the current holiday list, please ask the office.</p>'+contactLine(),chips:['Parent app','Contact']}},
+    uniform:function(){return {html:'<p>Books and uniform are charged once a year. The office will share the details and amounts when you join.</p>'+acts(WA('Hello Oasis Preschool Academy, could you share details about books and uniform?'),CALL(true)),chips:['Fees','Admission steps']}},
+    human:function(){return {html:'<p>Of course. Please speak to our office directly:</p>'+contactLine()+acts(CALL(),tel(TEL2,'Call '+PHONE2,true),WA(null,true)),chips:['Book a visit']}},
+    fallback:function(q){return {html:'<p>Sorry, I am not sure about that one. I can answer questions about classes, admissions, the van, fees and contact details.</p><p>For anything else, the office will help you.</p>'+acts(WA(q?'Hello Oasis Preschool Academy, I have a question: '+q:null),CALL(true)),chips:MAIN_CHIPS}}
+  };
+
+  /* intent patterns: [name, weight, regex] — highest total score wins */
+  var INTENTS=[
+    ['greet',1,/^(hi+|hello+|hey+|hii+|namaste|namaskaram|good (morning|afternoon|evening)|hai)\b/],
+    ['thanks',2,/\b(thanks?|thank you|thx|ty|great|ok thanks|super|nice)\b/],
+    ['bye',2,/^(bye|goodbye|see you|ok bye|tata)\b/],
+    ['help',2,/\b(help|what can you (do|answer)|who are you|menu|options)\b/],
+    ['whichclass',3,/\b(which|what|right|suitable|correct) (class|grade|level)\b|\bclass for my (child|son|daughter|kid)|\beligib|\bage (limit|criteria|group|requirement)|\bminimum age|\bhow old\b/],
+    ['classes',2,/\b(classes|class|programs?|programmes?|grades?|levels?|kindergarten|kg|pre ?school|courses?)\b/],
+    ['admissions',2,/\b(admissions?|admit|enrol+(ment)?|join(ing)?|apply|application|register|registration|enquiry|inquiry|enquire|new academic year|2026)\b/],
+    ['documents',3,/\b(documents?|certificates?|papers|birth certificate|aadha+r|photos?|proofs?|required for admission)\b/],
+    ['seats',3,/\b(seats?|vacanc(y|ies)|availab(le|ility)|full|space)\b/],
+    ['fees',3,/\b(fees?|cost|costs|price|pricing|charges?|tuition|payment|pay|upi|amount|how much|expensive|monthly|scholarship|discount)\b/],
+    ['van',3,/\b(van|bus|transport(ation)?|pick ?up|drop|route|stops?|driver|travel|vehicle)\b/],
+    ['timings',3,/\b(timings?|time|hours|what time|when does (the )?(school|class) (start|begin|end|finish)|school (starts?|ends?)|schedule|working days|saturdays?|sundays?|half day|full day)\b/],
+    ['location',3,/\b(where|address|location|located|map|maps|directions?|landmark|reach you|how to come|area)\b/],
+    ['contact',3,/\b(contact|phone|call|mobile|number|whatsapp|email|e-mail|mail)\b/],
+    ['visit',3,/\b(visit|tour|see the school|come and see|meet|appointment|demo class|book)\b/],
+    ['parentapp',3,/\b(parent app|app|attendance|homework|report cards?|gallery|progress|notification)\b/],
+    ['login',3,/\b(login|log in|sign in|signin|otp|password|staff login|portal|account)\b/],
+    ['teachers',3,/\b(teachers?|staff ratio|class size|students per class|strength|safe|safety|cctv|care|caring|attention)\b/],
+    ['curriculum',3,/\b(curriculum|syllabus|teach|learn|learning|method|activities|activity|play|festivals?|events?|celebrat\w*|cbse|montessori|phonics)\b/],
+    ['holidays',3,/\b(holidays?|vacation|leave|notices?|announcements?|calendar)\b/],
+    ['uniform',4,/\b(uniforms?|books?|stationery|bag|dress)\b/],
+    ['human',4,/\b(talk to (a )?(person|human|someone|staff)|real person|human|agent|principal|office staff|call me|call back|callback)\b/]
+  ];
+  var CLASS_RE=[['playgroup',/\b(play ?group|pre ?nursery|toddler)\b/],['nursery',/\bnursery\b/],['lkg',/\b(lkg|lower kg|lower kindergarten|pp ?1|pp-1)\b/],['ukg',/\b(ukg|upper kg|upper kindergarten|pp ?2|pp-2)\b/]];
+
+  function findStop(t){var flat=t.replace(/[^a-z0-9]/g,'');for(var i=0;i<STOPS.length;i++)for(var j=0;j<STOPS[i][1].length;j++)if(flat.indexOf(STOPS[i][1][j])>=0)return STOPS[i][0];return null}
+
+  function pick(scores){var best=null,bs=0;for(var k in scores)if(scores[k]>bs){best=k;bs=scores[k]}return best}
+  function answer(raw){
+    var t=norm(raw),wantAge=S.await==='age';S.await=null;
+    if(!t)return A.fallback('');
+    var age=parseAge(t,wantAge),scores={};
+    INTENTS.forEach(function(it){var m=t.match(new RegExp(it[2].source,'g'));if(m)scores[it[0]]=(scores[it[0]]||0)+it[1]*Math.min(m.length,3)});
+    if(Object.keys(scores).length>1){delete scores.greet;delete scores.thanks}
+    var best=pick(scores),cls=null,stop=findStop(t);
+    CLASS_RE.forEach(function(c){if(!cls&&c[1].test(t))cls=c[0]});
+    var clsObj=cls&&CLASSES.filter(function(c){return c.key===cls})[0];
+    var OTHER=['fees','van','timings','contact','location','documents','uniform','login','human'];
+    if(age!=null&&!(best&&OTHER.indexOf(best)>=0&&!scores.whichclass))return ageAnswer(age);
+    if(stop&&(!best||scores.van||best==='location'||/\b(come|cover|covers|go|reach|from|service)\b/.test(t)))return A.van(stop);
+    if(clsObj&&(!best||best==='classes'||best==='curriculum'))return classDetail(clsObj);
+    if(best==='whichclass'||(wantAge&&!best))return A.whichclass();
+    if(best==='van')return A.van(null);
+    if(best&&A[best])return A[best]();
+    if(clsObj)return classDetail(clsObj);
+    return A.fallback(String(raw).trim().slice(0,200));
+  }
+
+  /* ---------- chat state + rendering ---------- */
+  var S={await:null,history:[],started:false},KEY='oasisChat.v1',queue=Promise.resolve(),gen=0;
+  function save(){try{sessionStorage.setItem(KEY,JSON.stringify({h:S.history.slice(-60),a:S.await}))}catch(e){}}
+  function restore(){try{var d=JSON.parse(sessionStorage.getItem(KEY)||'null');if(d&&Array.isArray(d.h)&&d.h.length){S.history=d.h.filter(function(x){return x&&(x.from==='me'||x.from==='bot')&&typeof x.body==='string'});S.await=d.a==='age'?'age':null;return S.history.length>0}}catch(e){}return false}
+  function scrollDown(){log.scrollTop=log.scrollHeight}
+  function addMsg(from,body,keep){
+    var d=document.createElement('div');d.className='cb-msg '+from;
+    if(from==='me')d.textContent=body;else d.innerHTML=body;
+    log.appendChild(d);scrollDown();
+    if(keep!==false){S.history.push({from:from,body:body});save()}
+    return d;
+  }
+  function setChips(list){
+    chipsEl.innerHTML='';(list||[]).forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.addEventListener('click',function(){send(c)});chipsEl.appendChild(b)});
+    chipsEl.scrollLeft=0;
+    if(S.history.length){S.history[S.history.length-1].chips=list||[];save()}
+  }
+  function botSay(res){addMsg('bot',res.html);setChips(res.chips)}
+  function typingThenSay(res,g){
+    if(g!==gen)return Promise.resolve();
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var ty=document.createElement('div');ty.className='cb-typing';ty.setAttribute('aria-hidden','true');ty.innerHTML='<i></i><i></i><i></i>';
+    log.appendChild(ty);scrollDown();
+    return new Promise(function(r){setTimeout(function(){ty.remove();if(g===gen)botSay(res);r()},reduce?60:450+Math.min(500,res.html.length/3))});
+  }
+  function send(text){
+    text=String(text==null?'':text).replace(/\s+/g,' ').trim().slice(0,300);
+    if(!text)return;
+    addMsg('me',text);setChips([]);
+    var res;try{res=answer(text)}catch(e){if(window.console)console.error('Chatbot error:',e);res=A.fallback(text)}
+    var g=gen;
+    queue=queue.then(function(){return typingThenSay(res,g)}).catch(function(){});
+  }
+  function start(){
+    log.innerHTML='';chipsEl.innerHTML='';
+    if(restore()){S.history.forEach(function(m){addMsg(m.from,m.body,false)});var last=S.history[S.history.length-1];setChips(last&&last.chips?last.chips:MAIN_CHIPS)}
+    else{S.history=[];var w=A.welcome();addMsg('bot',w.html);setChips(w.chips)}
+    S.started=true;
+  }
+  function reset(){S.history=[];S.await=null;try{sessionStorage.removeItem(KEY)}catch(e){}gen++;queue=Promise.resolve();S.started=false;start();input.focus()}
+
+  /* ---------- open / close ---------- */
+  function isOpen(){return !panel.hidden}
+  function open(){if(!S.started)start();panel.hidden=false;fab.setAttribute('aria-expanded','true');document.body.classList.add('cb-open');scrollDown();
+    if(window.matchMedia('(min-width:521px)').matches||!('ontouchstart' in window))setTimeout(function(){input.focus({preventScroll:true})},30)}
+  function close(returnFocus){panel.hidden=true;fab.setAttribute('aria-expanded','false');document.body.classList.remove('cb-open');if(returnFocus&&!document.body.classList.contains('app-mode'))fab.focus({preventScroll:true})}
+  fab.addEventListener('click',function(){isOpen()?close(true):open()});
+  document.getElementById('cbClose').addEventListener('click',function(){close(true)});
+  document.getElementById('cbRestart').addEventListener('click',reset);
+  document.addEventListener('keydown',function(e){if((e.key==='Escape'||e.key==='Esc')&&isOpen()&&!(document.activeElement&&document.activeElement.closest&&document.activeElement.closest('dialog'))){e.preventDefault();close(true)}});
+  form.addEventListener('submit',function(e){e.preventDefault();var v=input.value;input.value='';send(v)});
+  window.addEventListener('hashchange',function(){if(location.hash.indexOf('#/')===0&&isOpen())close(false)});
+
+  /* buttons and links inside bot messages */
+  log.addEventListener('click',function(e){
+    var b=e.target.closest('[data-cb-act]');
+    if(b){var a=b.getAttribute('data-cb-act');
+      if(a==='enquire'){close(false);var c=document.getElementById('contact'),p=document.getElementById('pName');
+        if(c){c.scrollIntoView({behavior:'smooth',block:'start'});if(p)setTimeout(function(){try{p.focus({preventScroll:true})}catch(x){}},500)}}
+      else if(a==='login'){close(false);location.hash='#/login'}
+      return}
+    var l=e.target.closest('a[href^="#"]');
+    if(l&&window.matchMedia('(max-width:520px)').matches)close(false);
+  });
+  /* tiny hook for testing in the browser console: OasisChat.ask('fees') */
+  window.OasisChat={ask:function(q){return answer(q)},open:open,close:close};
+})();
+</script>
+
 </body>
 </html>
