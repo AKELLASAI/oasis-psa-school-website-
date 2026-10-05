@@ -12,6 +12,10 @@
 <meta name="geo.region" content="IN-AP">
 <meta name="geo.placename" content="Kurmannapalem, Visakhapatnam">
 <link rel="canonical" href="https://oasis-psa-school-website.vercel.app/">
+<link rel="alternate" hreflang="en-IN" href="https://oasis-psa-school-website.vercel.app/">
+<link rel="alternate" hreflang="te-IN" href="https://oasis-psa-school-website.vercel.app/te">
+<link rel="alternate" hreflang="x-default" href="https://oasis-psa-school-website.vercel.app/">
+<link rel="preload" as="image" href="logo-web.png">
 <link rel="icon" type="image/png" href="logo-icon.png">
 <link rel="apple-touch-icon" href="logo-icon.png">
 <meta property="og:type" content="website">
@@ -85,7 +89,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Lexend:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Lexend:wght@400;500;600;700&display=swap">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
@@ -259,6 +263,8 @@ textarea{resize:vertical;min-height:84px}
 footer{padding-block:36px;border-top:1px solid var(--line);background:var(--bg)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;color:var(--muted);font-size:.86rem}
 footer em{font-style:italic;color:var(--violet)}
+.foot-links{display:flex;flex-wrap:wrap;gap:6px 18px;width:100%}
+.foot-links a{color:var(--muted)}
 /* brand logo */
 .brand img.brand-logo{height:52px;width:auto;max-width:none;flex:none;display:block}
 @media (max-width:420px){.brand img.brand-logo{height:40px}}
@@ -378,7 +384,7 @@ dialog.dlg::backdrop{background:rgba(23,18,31,.45)}
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#home" aria-label="Oasis Preschool Academy home">
-      <img class="brand-logo" id="siteLogo" src="logo.png" alt="Oasis Preschool Academy - Growing roots to flying wings">
+      <img class="brand-logo" id="siteLogo" src="logo-web.png" width="400" height="106" fetchpriority="high" alt="Oasis Preschool Academy - Growing roots to flying wings">
     </a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
     <nav class="links" id="navLinks" aria-label="Main">
@@ -593,6 +599,7 @@ dialog.dlg::backdrop{background:rgba(23,18,31,.45)}
 
 <footer>
   <div class="wrap">
+    <nav class="foot-links" aria-label="More pages"><a href="/admissions">Admissions 2026–27</a><a href="/preschool-gajuwaka">Preschool near Gajuwaka</a><a href="/preschool-duvvada">Preschool near Duvvada</a><a href="/te" lang="te" hreflang="te">తెలుగు</a></nav>
     <span>© 2026 Oasis Preschool Academy · Kurmannapalem, Visakhapatnam</span>
     <em>…Growing roots to flying wings</em>
   </div>
@@ -1159,7 +1166,7 @@ body.app-mode .cb-fab,body.app-mode .cb-panel{display:none!important}
 </button>
 <div class="cb-panel" id="cbPanel" role="dialog" aria-labelledby="cbTitle" hidden>
   <div class="cb-head">
-    <span class="cb-ava"><img src="logo-icon.png" alt=""></span>
+    <span class="cb-ava"><img src="logo-icon.png" alt="" width="30" height="30" loading="lazy"></span>
     <div class="t"><b id="cbTitle">Oasis helper</b><small>Quick answers about our school</small></div>
     <button class="cb-hbtn" id="cbRestart" type="button" aria-label="Start a new chat" title="Start a new chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></button>
     <button class="cb-hbtn" id="cbClose" type="button" aria-label="Close chat" title="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>

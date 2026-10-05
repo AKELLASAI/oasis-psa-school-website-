@@ -14,7 +14,9 @@
 - `index.html` – website and all app screens
 - `server.js` – web server, API, database, OTP email
 - `Start Website.command` – double-click to start on a Mac
-- `logo.png`, `logo-icon.png` – school logo
+- `logo.png`, `logo-icon.png` – school logo (`logo-web.png` is a smaller copy for the website header)
+- `admissions.html`, `preschool-gajuwaka.html`, `preschool-duvvada.html`, `te.html` – SEO pages (Admissions, area pages, Telugu), styled by `pages.css`
+- `sitemap.xml`, `robots.txt`, `vercel.json` – search engine and Vercel settings
 - `config.json` – settings (created the first time it runs)
 - `data/` – database and uploads (created the first time it runs). **Back up this folder.**
 
