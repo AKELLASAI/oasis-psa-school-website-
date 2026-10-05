@@ -393,7 +393,9 @@ dialog.dlg::backdrop{background:rgba(23,18,31,.45)}
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
     <nav class="links" id="navLinks" aria-label="Main">
       <a href="#about">About</a>
+      <a href="#management">Management</a>
       <a href="#classes">Classes</a>
+      <a href="#events">Events</a>
       <a href="#van">School van</a>
       <a href="#admissions">Admissions</a>
       <a class="cta" href="#contact">Enquire now</a>
@@ -450,6 +452,25 @@ dialog.dlg::backdrop{background:rgba(23,18,31,.45)}
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="mgmt" id="management">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Management</p>
+        <h2>Principal&rsquo;s Desk</h2>
+        <p class="lede">A note from our principal to every family joining Oasis.</p>
+        <div class="pd-badge" aria-hidden="true"><span>OPSA</span></div>
+      </div>
+      <article class="pd-letter">
+        <p class="pd-hello">Welcome to our school community!</p>
+        <p>At our preschool, we believe that every child is unique, capable, and full of potential. Our management and teaching team work together to create a safe, joyful, and stimulating environment where children can learn, explore, and grow with confidence.</p>
+        <p>Our management focuses on providing quality early childhood education through child-centred learning, experienced teachers, engaging activities, and strong values. We believe that education at the preschool level should nurture not only academic readiness but also creativity, communication, independence, kindness, and social-emotional development.</p>
+        <p>We are committed to maintaining a positive partnership with parents and ensuring that every child receives individual attention and encouragement. Together, we can build a strong foundation for lifelong learning.</p>
+        <p>We warmly welcome you to be a part of our school family and look forward to working together for the bright future of every child.</p>
+        <p class="pd-sign">With warm regards,<br><b>Principal</b><br>Oasis Pre School Academy</p>
+      </article>
     </div>
   </section>
 
@@ -524,6 +545,63 @@ dialog.dlg::backdrop{background:rgba(23,18,31,.45)}
         <div><h3>School van</h3><p>Your child's route, pickup point, drop time and the driver's phone number.</p></div>
         <div><h3>Holidays and notices</h3><p>Upcoming holidays and school announcements in one place.</p></div>
         <div><h3>Report cards and gallery</h3><p>Progress reports and photos from class activities and celebrations.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events" id="events">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Events</p>
+        <h2>Celebrations through the year</h2>
+        <p class="lede">Festivals, national days and school events that children look forward to all year. Photos from each celebration are shared with parents in the Oasis app gallery.</p>
+      </div>
+      <div class="ev-grid">
+        <article class="ev ev-sun">
+          <span class="ev-when">June</span>
+          <h3>School reopening</h3>
+          <p>A warm welcome back, with new classrooms, new friends and a gentle start to the year.</p>
+        </article>
+        <article class="ev ev-pink">
+          <span class="ev-when">August</span>
+          <h3>Independence Day</h3>
+          <p>Flag hoisting, patriotic songs and little ones dressed in tricolour.</p>
+        </article>
+        <article class="ev ev-violet">
+          <span class="ev-when">August</span>
+          <h3>Krishnashtami</h3>
+          <p>Tiny Krishnas and Radhas, stories and the dahi handi celebration.</p>
+        </article>
+        <article class="ev ev-sky">
+          <span class="ev-when">Aug / Sept</span>
+          <h3>Vinayaka Chavithi</h3>
+          <p>Clay Ganesha making and learning about our festivals together.</p>
+        </article>
+        <article class="ev ev-sun">
+          <span class="ev-when">Oct / Nov</span>
+          <h3>Diwali</h3>
+          <p>Rangoli, diya painting and a safe, joyful festival of lights.</p>
+        </article>
+        <article class="ev ev-pink">
+          <span class="ev-when">14 November</span>
+          <h3>Children&rsquo;s Day</h3>
+          <p>A special day of games, fun and surprises, all about our children.</p>
+        </article>
+        <article class="ev ev-violet">
+          <span class="ev-when">January</span>
+          <h3>Sankranti</h3>
+          <p>Kites, rangoli and harvest traditions with family and friends.</p>
+        </article>
+        <article class="ev ev-sky">
+          <span class="ev-when">26 January</span>
+          <h3>Republic Day</h3>
+          <p>Flag hoisting, songs and our very first lessons about India.</p>
+        </article>
+        <article class="ev ev-leaf">
+          <span class="ev-when">Feb / March</span>
+          <h3>Annual Day &amp; Sports Day</h3>
+          <p>Dances, skits and races on stage and on the field, cheered on by parents.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -1423,10 +1501,35 @@ body.app-mode .cb-fab,body.app-mode .cb-panel{display:none!important}
 
 <!-- Scroll reveal animations -->
 <style>
+/* Principal's Desk */
+.mgmt{background:var(--tint)}
+.mgmt .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,72px);align-items:start}
+.pd-badge{margin-top:18px;width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--sun),var(--pink) 55%,var(--violet));box-shadow:0 12px 30px -12px var(--pink)}
+.pd-badge span{width:104px;height:104px;border-radius:50%;display:grid;place-items:center;background:var(--surface);font-family:var(--display);font-size:1.5rem;letter-spacing:.06em;color:var(--violet)}
+.pd-letter{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(24px,4vw,44px);display:grid;gap:14px;line-height:1.7;box-shadow:0 18px 40px -28px rgba(60,20,110,.35)}
+.pd-letter::before{content:"\201C";position:absolute;top:-6px;right:24px;font-family:var(--display);font-size:6rem;line-height:1;color:var(--pink-soft)}
+.pd-letter p{margin:0;color:var(--muted)}
+.pd-letter .pd-hello{font-family:var(--display);font-size:clamp(1.3rem,2.4vw,1.65rem);color:var(--violet);line-height:1.3}
+.pd-letter .pd-sign{margin-top:8px;padding-top:16px;border-top:2px dashed var(--line);color:var(--ink)}
+.pd-letter .pd-sign b{font-family:var(--display);font-weight:400;font-size:1.25rem;color:var(--pink)}
+@media (max-width:820px){.mgmt .wrap{grid-template-columns:1fr;gap:0}.pd-badge{display:none}}
+/* Events */
+.events{background:var(--bg)}
+.ev-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.ev{--c:var(--violet);--cs:var(--violet-soft);background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 20px;display:grid;gap:8px;align-content:start;border-top:4px solid var(--c);transition:transform .25s ease,box-shadow .25s ease}
+.ev:hover{transform:translateY(-4px);box-shadow:0 16px 32px -20px var(--c)}
+.ev-sun{--c:var(--sun);--cs:var(--sun-soft)}.ev-pink{--c:var(--pink);--cs:var(--pink-soft)}.ev-sky{--c:var(--sky);--cs:var(--sky-soft)}.ev-leaf{--c:var(--leaf);--cs:var(--sun-soft)}
+.ev-when{justify-self:start;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--cs);color:var(--c)}
+.ev h3{font-family:var(--body);font-weight:600;font-size:1.05rem}
+.ev p{color:var(--muted);font-size:.93rem;margin:0}
+@media (max-width:900px){.ev-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.ev-grid{grid-template-columns:1fr}}
 .rv{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--rv-d,0ms);will-change:opacity,transform}
 .rv.rv-l{transform:translateX(-36px)}
 .rv.rv-r{transform:translateX(36px)}
 .rv.rv-in{opacity:1;transform:none}
+main#home{overflow-x:clip}
+@media (max-width:820px){.rv.rv-l,.rv.rv-r{transform:translateY(28px)}}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important}}
 </style>
 <script>
@@ -1445,7 +1548,9 @@ body.app-mode .cb-fab,body.app-mode .cb-panel{display:none!important}
     ['.routes > .route',''],
     ['.steps > li',''],
     ['.contact .cinfo .row','rv-l'],
-    ['.contact .enq','rv-r']
+    ['.contact .enq','rv-r'],
+    ['.mgmt .pd-letter','rv-r'],
+    ['.ev-grid > .ev','']
   ];
   var seen=[];
   groups.forEach(function(g){
