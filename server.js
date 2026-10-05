@@ -470,7 +470,7 @@ function cleanHomework(b) {
 }
 
 /* ---------------- static files ---------------- */
-const STATIC_TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.ico': 'image/x-icon', '.gif': 'image/gif', '.woff2': 'font/woff2', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8' };
+const STATIC_TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.ico': 'image/x-icon', '.gif': 'image/gif', '.woff2': 'font/woff2', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8', '.webmanifest': 'application/manifest+json' };
 function serveStatic(req, res, url) {
   let p = decodeURIComponent(url.pathname); if (p.endsWith('/')) p += 'index.html'; else if (!path.extname(p)) p += '.html'; // clean URLs like /admissions
   const f = path.resolve(ROOT, '.' + path.posix.normalize(p));
