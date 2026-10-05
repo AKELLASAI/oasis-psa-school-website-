@@ -1421,5 +1421,51 @@ body.app-mode .cb-fab,body.app-mode .cb-panel{display:none!important}
 })();
 </script>
 
+<!-- Scroll reveal animations -->
+<style>
+.rv{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--rv-d,0ms);will-change:opacity,transform}
+.rv.rv-l{transform:translateX(-36px)}
+.rv.rv-r{transform:translateX(36px)}
+.rv.rv-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important}}
+</style>
+<script>
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var main=document.getElementById('home');if(!main)return;
+  var groups=[
+    ['.hero .eyebrow, .hero h1, .hero .lede, .hero .hero-actions, .hero .facts',''],
+    ['.sec-head',''],
+    ['.about .lede','rv-r'],
+    ['.pillars > .pillar',''],
+    ['.classes > .cls',''],
+    ['.growth',''],
+    ['.feat > div',''],
+    ['.routes > .route',''],
+    ['.steps > li',''],
+    ['.contact .cinfo .row','rv-l'],
+    ['.contact .enq','rv-r']
+  ];
+  var seen=[];
+  groups.forEach(function(g){
+    var els=main.querySelectorAll(g[0]);
+    var byParent=new Map();
+    els.forEach(function(el){
+      if(seen.indexOf(el)>-1)return;seen.push(el);
+      var n=byParent.get(el.parentNode)||0;byParent.set(el.parentNode,n+1);
+      el.classList.add('rv');if(g[1])el.classList.add(g[1]);
+      el.style.setProperty('--rv-d',Math.min(n*110,550)+'ms');
+    });
+  });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('rv-in');io.unobserve(e.target);
+        setTimeout(function(){e.target.style.willChange='auto'},1400);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  seen.forEach(function(el){io.observe(el)});
+})();
+</script>
 </body>
 </html>
