@@ -1,5 +1,5 @@
 #!/bin/bash
-# Oasis Pre School Academy - double-click to start the website and the school management app.
+# Oasis Preschool Academy - double-click to start the website and the school management app.
 # Keep this window open while you use it. Close it (or press Ctrl+C) to stop.
 cd "$(dirname "$0")" || exit 1
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"

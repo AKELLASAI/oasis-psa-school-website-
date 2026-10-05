@@ -1,6 +1,6 @@
 'use strict';
 /*
- * Oasis Pre School Academy - website + school management server
+ * Oasis Preschool Academy - website + school management server
  * Stack: Node.js (no npm packages needed), built-in SQLite (node:sqlite), plain HTML/CSS/JS front end.
  * Run:   node server.js        (or double-click "Start Website.command" on a Mac)
  * Data:  ./data/oasis.db  (SQLite)  and  ./data/uploads/  (homework attachments)
@@ -21,7 +21,7 @@ const DEFAULT_CONFIG = {
   adminName: 'Administrator',
   otpMinutes: 5,
   sessionHours: 12,
-  smtp: { host: 'smtp.gmail.com', port: 465, user: '', pass: '', fromName: 'Oasis Pre School Academy' }
+  smtp: { host: 'smtp.gmail.com', port: 465, user: '', pass: '', fromName: 'Oasis Preschool Academy' }
 };
 if (!fs.existsSync(CONFIG_FILE)) fs.writeFileSync(CONFIG_FILE, JSON.stringify(DEFAULT_CONFIG, null, 2));
 const config = Object.assign({}, DEFAULT_CONFIG, JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8')));
@@ -110,7 +110,7 @@ function seed() {
   if (!store.get('settings', 'school')) {
     let logo = '';
     try { logo = 'data:image/png;base64,' + fs.readFileSync(path.join(ROOT, 'logo.png')).toString('base64'); } catch (e) { }
-    store.put('settings', { id: 'school', name: 'Oasis Pre School Academy', tagline: 'Growing roots to flying wings', address: 'Kurmannapalem, Visakhapatnam, Andhra Pradesh 530046', phone: '83745 20766, 83745 20722', email: 'oasispsa@gmail.com', logo, primaryColor: '#d6157a', secondaryColor: '#6a2fb2' });
+    store.put('settings', { id: 'school', name: 'Oasis Preschool Academy', tagline: 'Growing roots to flying wings', address: 'Kurmannapalem, Visakhapatnam, Andhra Pradesh 530046', phone: '83745 20766, 83745 20722', email: 'oasispsa@gmail.com', logo, primaryColor: '#d6157a', secondaryColor: '#6a2fb2' });
   }
   if (store.all('classes').length === 0) {
     [['Playgroup', '1½ to 3 years'], ['Nursery', '3 to 4 years'], ['LKG', '4 to 5 years'], ['UKG', '5 to 6 years']].forEach(([name, ageGroup], i) => {
@@ -505,7 +505,7 @@ http.createServer(async (req, res) => {
   }
 }).listen(config.port, config.host, () => {
   const lan = Object.values(os.networkInterfaces()).flat().filter(i => i && i.family === 'IPv4' && !i.internal).map(i => i.address);
-  console.log(`\n  Oasis Pre School Academy is running`);
+  console.log(`\n  Oasis Preschool Academy is running`);
   console.log(`  On this computer:  http://localhost:${config.port}`);
   lan.forEach(ip => console.log(`  On phones (same Wi-Fi):  http://${ip}:${config.port}`));
   console.log(`  Database: ${store.kind}`);

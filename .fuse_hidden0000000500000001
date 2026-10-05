@@ -3,49 +3,49 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Oasis Pre School Academy | Preschool in Kurmannapalem, Visakhapatnam</title>
+<title>Oasis Preschool Academy | Preschool in Kurmannapalem, Visakhapatnam</title>
 <meta name="description" content="Preschool in Kurmannapalem, Vizag (near Gajuwaka & Duvvada): Playgroup, Nursery, LKG, UKG. Small classes, school van, parent app. Admissions open 2026–27.">
-<meta name="keywords" content="preschool Kurmannapalem, play school Visakhapatnam, preschool Vizag, playgroup, nursery, LKG, UKG, kindergarten Gajuwaka, preschool Duvvada, Oasis Pre School Academy, admissions 2026-27">
+<meta name="keywords" content="preschool Kurmannapalem, play school Visakhapatnam, preschool Vizag, playgroup, nursery, LKG, UKG, kindergarten Gajuwaka, preschool Duvvada, Oasis Preschool Academy, admissions 2026-27">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="author" content="Oasis Pre School Academy">
+<meta name="author" content="Oasis Preschool Academy">
 <meta name="theme-color" content="#d6157a">
 <meta name="google-site-verification" content="mYVclgwCtC2Wg-dTEv0l_XbyTZr951TMOKWrK1YPVo4">
 <meta name="geo.region" content="IN-AP">
 <meta name="geo.placename" content="Kurmannapalem, Visakhapatnam">
-<link rel="canonical" href="https://oasis-pre-school-academy.vercel.app/">
-<link rel="alternate" hreflang="en-IN" href="https://oasis-pre-school-academy.vercel.app/">
-<link rel="alternate" hreflang="te-IN" href="https://oasis-pre-school-academy.vercel.app/te">
-<link rel="alternate" hreflang="x-default" href="https://oasis-pre-school-academy.vercel.app/">
+<link rel="canonical" href="https://oasis-psa-school-website.vercel.app/">
+<link rel="alternate" hreflang="en-IN" href="https://oasis-psa-school-website.vercel.app/">
+<link rel="alternate" hreflang="te-IN" href="https://oasis-psa-school-website.vercel.app/te">
+<link rel="alternate" hreflang="x-default" href="https://oasis-psa-school-website.vercel.app/">
 <link rel="preload" as="image" href="logo-web.png">
 <link rel="icon" type="image/png" href="logo-icon.png">
 <link rel="apple-touch-icon" href="logo-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Oasis Pre School Academy">
-<meta property="og:title" content="Oasis Pre School Academy | Preschool in Kurmannapalem, Visakhapatnam">
+<meta property="og:site_name" content="Oasis Preschool Academy">
+<meta property="og:title" content="Oasis Preschool Academy | Preschool in Kurmannapalem, Visakhapatnam">
 <meta property="og:description" content="Playgroup, Nursery, LKG and UKG in Kurmannapalem, Vizag. Admissions open for 2026–27. Growing roots to flying wings.">
-<meta property="og:url" content="https://oasis-pre-school-academy.vercel.app/">
-<meta property="og:image" content="https://oasis-pre-school-academy.vercel.app/og-image.jpg">
+<meta property="og:url" content="https://oasis-psa-school-website.vercel.app/">
+<meta property="og:image" content="https://oasis-psa-school-website.vercel.app/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Oasis Pre School Academy logo – Growing roots to flying wings">
+<meta property="og:image:alt" content="Oasis Preschool Academy logo – Growing roots to flying wings">
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Oasis Pre School Academy | Preschool in Kurmannapalem, Visakhapatnam">
+<meta name="twitter:title" content="Oasis Preschool Academy | Preschool in Kurmannapalem, Visakhapatnam">
 <meta name="twitter:description" content="Playgroup, Nursery, LKG and UKG in Kurmannapalem, Vizag. Admissions open for 2026–27.">
-<meta name="twitter:image" content="https://oasis-pre-school-academy.vercel.app/og-image.jpg">
+<meta name="twitter:image" content="https://oasis-psa-school-website.vercel.app/og-image.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Preschool",
-  "@id": "https://oasis-pre-school-academy.vercel.app/#school",
-  "name": "Oasis Pre School Academy",
+  "@id": "https://oasis-psa-school-website.vercel.app/#school",
+  "name": "Oasis Preschool Academy",
   "alternateName": "Oasis PSA",
   "slogan": "Growing roots to flying wings",
   "description": "A neighbourhood preschool in Kurmannapalem, Visakhapatnam, close to Gajuwaka and Duvvada, for children in Playgroup, Nursery, LKG and UKG.",
-  "url": "https://oasis-pre-school-academy.vercel.app/",
-  "logo": "https://oasis-pre-school-academy.vercel.app/logo.png",
-  "image": "https://oasis-pre-school-academy.vercel.app/og-image.jpg",
+  "url": "https://oasis-psa-school-website.vercel.app/",
+  "logo": "https://oasis-psa-school-website.vercel.app/logo.png",
+  "image": "https://oasis-psa-school-website.vercel.app/og-image.jpg",
   "email": "oasispsa@gmail.com",
   "telephone": ["+91-83745-20766", "+91-83745-20722"],
   "address": {
@@ -81,15 +81,15 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Where is Oasis Pre School Academy?", "acceptedAnswer": {"@type": "Answer", "text": "Oasis Pre School Academy is in Kurmannapalem, Visakhapatnam (530046), close to Gajuwaka and Duvvada."}},
-    {"@type": "Question", "name": "Which classes does Oasis Pre School Academy offer?", "acceptedAnswer": {"@type": "Answer", "text": "Playgroup (1½ to 3 years), Nursery (3 to 4 years), LKG (4 to 5 years) and UKG (5 to 6 years)."}},
+    {"@type": "Question", "name": "Where is Oasis Preschool Academy?", "acceptedAnswer": {"@type": "Answer", "text": "Oasis Preschool Academy is in Kurmannapalem, Visakhapatnam (530046), close to Gajuwaka and Duvvada."}},
+    {"@type": "Question", "name": "Which classes does Oasis Preschool Academy offer?", "acceptedAnswer": {"@type": "Answer", "text": "Playgroup (1½ to 3 years), Nursery (3 to 4 years), LKG (4 to 5 years) and UKG (5 to 6 years)."}},
     {"@type": "Question", "name": "Are admissions open for 2026–27?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Call or WhatsApp +91 83745 20722, or send the enquiry form on the website, to book a school visit."}},
     {"@type": "Question", "name": "Is there a school van?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The school van runs from Kurmannapalem to Duvvada."}},
     {"@type": "Question", "name": "How can fees be paid?", "acceptedAnswer": {"@type": "Answer", "text": "Fees can be paid by UPI, and parents can see dues and receipts in the parent app."}}
   ]
 }
 </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://oasis-pre-school-academy.vercel.app/#website", "url": "https://oasis-pre-school-academy.vercel.app/", "name": "Oasis Pre School Academy", "inLanguage": ["en-IN", "te-IN"], "publisher": {"@id": "https://oasis-pre-school-academy.vercel.app/#school"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://oasis-psa-school-website.vercel.app/#website", "url": "https://oasis-psa-school-website.vercel.app/", "name": "Oasis Preschool Academy", "inLanguage": ["en-IN", "te-IN"], "publisher": {"@id": "https://oasis-psa-school-website.vercel.app/#school"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Lexend:wght@400;500;600;700&display=swap">
@@ -387,8 +387,8 @@ dialog.dlg::backdrop{background:rgba(23,18,31,.45)}
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#home" aria-label="Oasis Pre School Academy home">
-      <img class="brand-logo" id="siteLogo" src="logo-web.png" width="400" height="106" fetchpriority="high" alt="Oasis Pre School Academy - Growing roots to flying wings">
+    <a class="brand" href="#home" aria-label="Oasis Preschool Academy home">
+      <img class="brand-logo" id="siteLogo" src="logo-web.png" width="400" height="106" fetchpriority="high" alt="Oasis Preschool Academy - Growing roots to flying wings">
     </a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
     <nav class="links" id="navLinks" aria-label="Main">
@@ -430,7 +430,7 @@ dialog.dlg::backdrop{background:rgba(23,18,31,.45)}
         <blockquote style="margin-top:22px">Strong roots first, so little ones can fly with confidence.</blockquote>
       </div>
       <div>
-        <p class="lede">Oasis Pre School Academy is a neighbourhood preschool in Kurmannapalem, close to Gajuwaka and Duvvada. We care for children in their earliest school years, when habits, curiosity and confidence take shape. Every day mixes play, stories, songs, early letters and numbers, art and outdoor time.</p>
+        <p class="lede">Oasis Preschool Academy is a neighbourhood preschool in Kurmannapalem, close to Gajuwaka and Duvvada. We care for children in their earliest school years, when habits, curiosity and confidence take shape. Every day mixes play, stories, songs, early letters and numbers, art and outdoor time.</p>
         <div class="pillars">
           <div class="pillar">
             <span class="ic" style="background:var(--sun-soft);color:var(--sun)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21V11"/><path d="M12 11c0-4 3-6 7-6 0 4-3 6-7 6Z"/><path d="M12 14c0-3-2.5-5-6-5 0 3 2.5 5 6 5Z"/></svg></span>
@@ -604,7 +604,7 @@ dialog.dlg::backdrop{background:rgba(23,18,31,.45)}
 <footer>
   <div class="wrap">
     <nav class="foot-links" aria-label="More pages"><a href="/admissions">Admissions 2026–27</a><a href="/preschool-gajuwaka">Preschool near Gajuwaka</a><a href="/preschool-duvvada">Preschool near Duvvada</a><a href="/te" lang="te" hreflang="te">తెలుగు</a></nav>
-    <span>© 2026 Oasis Pre School Academy · Kurmannapalem, Visakhapatnam</span>
+    <span>© 2026 Oasis Preschool Academy · Kurmannapalem, Visakhapatnam</span>
     <em>…Growing roots to flying wings</em>
   </div>
 </footer>
@@ -635,7 +635,7 @@ dialog.dlg::backdrop{background:rgba(23,18,31,.45)}
     var miss=[];if(!p)miss.push("parent's name");if(ph.length<10)miss.push('a 10-digit mobile number');if(!c)miss.push("child's name");
     if(miss.length){err.textContent='Please add '+miss.join(', ')+'.';err.hidden=false;return}
     err.hidden=true;
-    var dob=val('cDob'),lines=['Hello Oasis Pre School Academy, I would like to enquire about admission.','',
+    var dob=val('cDob'),lines=['Hello Oasis Preschool Academy, I would like to enquire about admission.','',
       "Parent: "+p,'Mobile: '+ph,"Child: "+c,'Class: '+val('cClass')];
     if(dob)lines.push('Date of birth: '+dob.split('-').reverse().join('-'));
     lines.push('School van: '+val('cVan'));
@@ -720,7 +720,7 @@ dialog.dlg::backdrop{background:rgba(23,18,31,.45)}
   /* ---------- login: email -> OTP -> session ---------- */
   function renderLogin(){
     appEl.innerHTML='<div class="login-wrap"><div class="login-card" id="lc">'+
-      '<img src="'+esc(logoSrc())+'" alt="'+esc(S.school?S.school.name:'Oasis Pre School Academy')+'" class="logo-chip">'+
+      '<img src="'+esc(logoSrc())+'" alt="'+esc(S.school?S.school.name:'Oasis Preschool Academy')+'" class="logo-chip">'+
       '<div><h1>Staff and parent login</h1><p class="sub" style="margin-top:6px">Sign in with your registered email. We will email you a 6-digit code.</p></div>'+
       '<form id="emailForm" style="display:grid;gap:14px" novalidate><label for="lEmail">Email address<input id="lEmail" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required></label>'+
       '<p class="err" id="lErr" hidden></p><button class="btn btn-primary" type="submit" style="justify-content:center">Send OTP</button></form>'+
@@ -1214,7 +1214,7 @@ body.app-mode .cb-fab,body.app-mode .cb-panel{display:none!important}
   function act(name,label,alt){return '<button type="button" data-cb-act="'+esc(name)+'"'+(alt?' class="alt"':'')+'>'+esc(label)+'</button>'}
   function acts(){return '<div class="cb-acts">'+Array.prototype.slice.call(arguments).join('')+'</div>'}
   var CALL=function(alt){return tel(TEL1,'Call '+PHONE1,alt)};
-  var WA=function(q,alt){return ext(waLink(q||'Hello Oasis Pre School Academy, I have a question.'),'WhatsApp us',alt)};
+  var WA=function(q,alt){return ext(waLink(q||'Hello Oasis Preschool Academy, I have a question.'),'WhatsApp us',alt)};
   var ENQ=function(alt){return act('enquire','Fill the enquiry form',alt)};
   function contactLine(){return '<p>Call <a href="'+TEL1+'">'+PHONE1+'</a> or <a href="'+TEL2+'">'+PHONE2+'</a>, or WhatsApp us on '+PHONE2+'.</p>'}
   function classOfAge(a){for(var i=0;i<CLASSES.length;i++)if(a>=CLASSES[i].min&&a<CLASSES[i].max)return CLASSES[i];return null}
@@ -1258,7 +1258,7 @@ body.app-mode .cb-fab,body.app-mode .cb-panel{display:none!important}
   }
   function ageAnswer(a){
     var c=classOfAge(a),s='<p>At <b>'+esc(fmtAge(a))+'</b>, ';
-    if(c)return {html:s+'your child fits our <b>'+c.name+'</b> class ('+c.age+').</p><p>The office confirms the final class from the date of birth when you visit.</p>'+acts(ENQ(),WA('Hello Oasis Pre School Academy, I would like to enquire about '+c.name+' admission for my child ('+fmtAge(a)+').',true)),
+    if(c)return {html:s+'your child fits our <b>'+c.name+'</b> class ('+c.age+').</p><p>The office confirms the final class from the date of birth when you visit.</p>'+acts(ENQ(),WA('Hello Oasis Preschool Academy, I would like to enquire about '+c.name+' admission for my child ('+fmtAge(a)+').',true)),
       chips:['What does '+c.name+' learn?','Admission steps','School van']};
     if(a<1.5)return {html:s+'your child is a little young for now. Playgroup starts at <b>1½ years</b>.</p><p>You are welcome to enquire early and visit with your child.</p>'+acts(ENQ(),CALL(true)),chips:['Classes and ages','Book a visit']};
     return {html:s+'your child is ready for <b>Class 1</b>. Oasis is a preschool, so our oldest class is UKG (5 to 6 years).</p><p>Please call the office if you would like advice.</p>'+acts(CALL(),WA(null,true)),chips:['Classes and ages','Contact']};
@@ -1279,27 +1279,27 @@ body.app-mode .cb-fab,body.app-mode .cb-panel{display:none!important}
     classes:function(){return {html:'<p>We have four classes:</p><ul>'+CLASSES.map(function(c){return '<li><b>'+c.name+'</b> – '+c.age+'</li>'}).join('')+'</ul><p>Tell me your child\'s age (for example <i>3 years</i> or <i>2 years 6 months</i>) and I will suggest the right class.</p>',
       chips:['Which class for my child?','What does LKG learn?','Admission steps']}},
     whichclass:function(){S.await='age';return {html:'<p>How old is your child? You can type something like <i>3 years</i>, <i>2.5 years</i>, <i>30 months</i> or the date of birth (<i>15-06-2022</i>).</p>',chips:['2 years','3 years','4 years','5 years']}},
-    admissions:function(){return {html:'<p>Admissions are <b>open for 2026–27</b>. Joining Oasis takes four steps:</p><ol><li><b>Get in touch</b> – call, WhatsApp or send the enquiry form.</li><li><b>Visit the school</b> – bring your child, see the classrooms and meet the teachers.</li><li><b>Fill the admission form</b>.</li><li><b>Confirm the seat</b> – pay the admission fee. You get your parent app login before the first day.</li></ol>'+acts(ENQ(),WA('Hello Oasis Pre School Academy, I would like to enquire about admission for 2026–27.',true),CALL(true)),
+    admissions:function(){return {html:'<p>Admissions are <b>open for 2026–27</b>. Joining Oasis takes four steps:</p><ol><li><b>Get in touch</b> – call, WhatsApp or send the enquiry form.</li><li><b>Visit the school</b> – bring your child, see the classrooms and meet the teachers.</li><li><b>Fill the admission form</b>.</li><li><b>Confirm the seat</b> – pay the admission fee. You get your parent app login before the first day.</li></ol>'+acts(ENQ(),WA('Hello Oasis Preschool Academy, I would like to enquire about admission for 2026–27.',true),CALL(true)),
       chips:['Documents needed','Which class for my child?','Fees']}},
     documents:function(){return {html:'<p>The admission form asks for:</p><ul><li>Your child\'s name and date of birth</li><li>Parents\' names, phone numbers and address</li><li>Whether you need the school van</li></ul><p>If any certificates or photos are needed, the office will tell you when you visit.</p>'+acts(ENQ(),CALL(true)),chips:['Admission steps','Fees','Book a visit']}},
-    seats:function(){return {html:'<p>Admissions for 2026–27 are open. Seats depend on the class, so please check with the office for the class you want.</p>'+contactLine()+acts(WA('Hello Oasis Pre School Academy, are seats available for my child?'),CALL(true)),chips:['Admission steps','Classes and ages']}},
-    fees:function(){return {html:'<p>Fees depend on the class and on whether your child uses the van. The fee types are:</p><ul><li>Admission fee (one time)</li><li>Tuition fee (monthly)</li><li>School van fee (monthly, if used)</li><li>Books and uniform (yearly)</li><li>Activity fee (per term)</li></ul><p>Fees can be paid by <b>UPI</b>, and you get a receipt once the office confirms payment. For the exact amounts, please ask the office.</p>'+acts(WA('Hello Oasis Pre School Academy, could you share the fee details for admission?'),CALL(true)),
+    seats:function(){return {html:'<p>Admissions for 2026–27 are open. Seats depend on the class, so please check with the office for the class you want.</p>'+contactLine()+acts(WA('Hello Oasis Preschool Academy, are seats available for my child?'),CALL(true)),chips:['Admission steps','Classes and ages']}},
+    fees:function(){return {html:'<p>Fees depend on the class and on whether your child uses the van. The fee types are:</p><ul><li>Admission fee (one time)</li><li>Tuition fee (monthly)</li><li>School van fee (monthly, if used)</li><li>Books and uniform (yearly)</li><li>Activity fee (per term)</li></ul><p>Fees can be paid by <b>UPI</b>, and you get a receipt once the office confirms payment. For the exact amounts, please ask the office.</p>'+acts(WA('Hello Oasis Preschool Academy, could you share the fee details for admission?'),CALL(true)),
       chips:['Admission steps','School van','Book a visit']}},
     van:function(stop){var head=stop?'<p>Yes, our van stops at <b>'+esc(stop)+'</b>.</p>':'';
       return {html:head+'<p>The school van runs from <b>Kurmannapalem to Duvvada</b>, stopping at:</p><ul>'+STOPS.slice(1,7).map(function(s){return '<li>'+s[0]+'</li>'}).join('')+'</ul><p>The van has a regular driver, and parents can see the route, pickup point, drop time and the driver\'s number in the parent app.</p>'+(stop?'':'<p>If your area is not listed, call us and we will tell you whether a pickup is possible.</p>')+acts(CALL(),tel('#van','See the route',true)),
       chips:['Fees','Admission steps','Contact']}},
-    timings:function(){return {html:'<p>I do not have the daily school timings here. The office will be happy to share them.</p>'+contactLine()+acts(CALL(),WA('Hello Oasis Pre School Academy, could you share the school timings?',true)),chips:['Book a visit','Admission steps']}},
+    timings:function(){return {html:'<p>I do not have the daily school timings here. The office will be happy to share them.</p>'+contactLine()+acts(CALL(),WA('Hello Oasis Preschool Academy, could you share the school timings?',true)),chips:['Book a visit','Admission steps']}},
     location:function(){return {html:'<p>We are at <b>'+esc(ADDRESS)+'</b>, close to Gajuwaka and Duvvada.</p>'+acts(ext(MAPS,'Open in Google Maps'),CALL(true)),chips:['Book a visit','School van','Contact']}},
     contact:function(){return {html:'<p>You can reach the school office here:</p><ul><li>Phone: <a href="'+TEL1+'">'+PHONE1+'</a>, <a href="'+TEL2+'">'+PHONE2+'</a></li><li>WhatsApp: '+PHONE2+'</li><li>Email: <a href="mailto:'+EMAIL+'">'+EMAIL+'</a></li><li>Address: '+esc(ADDRESS)+'</li></ul>'+acts(CALL(),WA(null,true),ext(MAPS,'Directions',true)),chips:['Book a visit','Admission steps']}},
-    visit:function(){return {html:'<p>We would love to show you around! Bring your child to see the classrooms and meet the teachers.</p><p>Send the enquiry form or message us with a good time to visit, and we will confirm.</p>'+acts(ENQ(),WA('Hello Oasis Pre School Academy, I would like to book a school visit.',true),CALL(true)),chips:['Location','Admission steps']}},
+    visit:function(){return {html:'<p>We would love to show you around! Bring your child to see the classrooms and meet the teachers.</p><p>Send the enquiry form or message us with a good time to visit, and we will confirm.</p>'+acts(ENQ(),WA('Hello Oasis Preschool Academy, I would like to book a school visit.',true),CALL(true)),chips:['Location','Admission steps']}},
     parentapp:function(){return {html:'<p>Oasis parents get their own app on Android or iPhone with:</p><ul><li>Daily attendance with a monthly calendar</li><li>Homework with due dates</li><li>Fees, UPI payment and receipts</li><li>School van route, pickup and driver\'s number</li><li>Holidays and notices</li><li>Report cards and the photo gallery</li></ul><p>You get your login once admission is confirmed.</p>',chips:['Admission steps','Staff login']}},
     login:function(){return {html:'<p>Teachers, office staff and registered parents can sign in with their registered email. A 6-digit code is emailed to you; there is no password.</p><p>If your email is not registered, please contact the school office.</p>'+acts(act('login','Go to login'),CALL(true)),chips:['Contact']}},
     teachers:function(){return {html:'<p>We keep <b>classes small</b> so teachers know each child, their friends and their pace. Children get personal attention, and parents can follow the day through the parent app.</p>'+acts(act('enquire','Book a visit to meet them')),chips:['Classes and ages','Book a visit']}},
     curriculum:function(){return {html:'<p>Children learn through play: hands-on activity kits, sensory play, rhymes and stories at every level. Step by step from Playgroup to UKG they build reading, writing and number skills, ready for Class 1.</p><p>We also celebrate Independence Day, festivals and term activities together.</p>',chips:['What does UKG learn?','Classes and ages','Book a visit']}},
     holidays:function(){return {html:'<p>Holidays and school notices are shared with parents in the parent app. For the current holiday list, please ask the office.</p>'+contactLine(),chips:['Parent app','Contact']}},
-    uniform:function(){return {html:'<p>Books and uniform are charged once a year. The office will share the details and amounts when you join.</p>'+acts(WA('Hello Oasis Pre School Academy, could you share details about books and uniform?'),CALL(true)),chips:['Fees','Admission steps']}},
+    uniform:function(){return {html:'<p>Books and uniform are charged once a year. The office will share the details and amounts when you join.</p>'+acts(WA('Hello Oasis Preschool Academy, could you share details about books and uniform?'),CALL(true)),chips:['Fees','Admission steps']}},
     human:function(){return {html:'<p>Of course. Please speak to our office directly:</p>'+contactLine()+acts(CALL(),tel(TEL2,'Call '+PHONE2,true),WA(null,true)),chips:['Book a visit']}},
-    fallback:function(q){return {html:'<p>Sorry, I am not sure about that one. I can answer questions about classes, admissions, the van, fees and contact details.</p><p>For anything else, the office will help you.</p>'+acts(WA(q?'Hello Oasis Pre School Academy, I have a question: '+q:null),CALL(true)),chips:MAIN_CHIPS}}
+    fallback:function(q){return {html:'<p>Sorry, I am not sure about that one. I can answer questions about classes, admissions, the van, fees and contact details.</p><p>For anything else, the office will help you.</p>'+acts(WA(q?'Hello Oasis Preschool Academy, I have a question: '+q:null),CALL(true)),chips:MAIN_CHIPS}}
   };
 
   /* intent patterns: [name, weight, regex] — highest total score wins */

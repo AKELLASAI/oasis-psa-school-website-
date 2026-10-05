@@ -1,4 +1,4 @@
-# Oasis Pre School Academy – website + school app
+# Oasis Preschool Academy – website + school app
 
 ## Technical stack
 | Layer | What it uses |
@@ -30,7 +30,7 @@
 1. In the school Google account turn on 2-Step Verification, then create an **App password** (Google Account → Security → App passwords).
 2. Open `config.json` and fill in:
 ```json
-"smtp": { "host": "smtp.gmail.com", "port": 465, "user": "oasispsa@gmail.com", "pass": "the 16-letter app password", "fromName": "Oasis Pre School Academy" }
+"smtp": { "host": "smtp.gmail.com", "port": 465, "user": "oasispsa@gmail.com", "pass": "the 16-letter app password", "fromName": "Oasis Preschool Academy" }
 ```
 3. Close the Terminal window and start the app again. Codes are now emailed, never shown on screen.
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://oasis-psa-school-website.vercel.app/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://oasis-psa-school-website.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://oasis-psa-school-website.vercel.app/te"/>
+    <image:image><image:loc>https://oasis-psa-school-website.vercel.app/og-image.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://oasis-psa-school-website.vercel.app/admissions</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://oasis-psa-school-website.vercel.app/preschool-gajuwaka</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://oasis-psa-school-website.vercel.app/preschool-duvvada</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://oasis-psa-school-website.vercel.app/te</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://oasis-psa-school-website.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="te-IN" href="https://oasis-psa-school-website.vercel.app/te"/>
+  </url>
+</urlset>

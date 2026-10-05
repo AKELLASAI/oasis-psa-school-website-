@@ -7,42 +7,42 @@
 <meta name="description" content="కుర్మన్నపాలెం, విశాఖపట్నంలో ఒయాసిస్ ప్రీస్కూల్ అకాడమీ — ప్లేగ్రూప్, నర్సరీ, LKG, UKG. గాజువాక, దువ్వాడ దగ్గర. 2026–27 అడ్మిషన్లు ప్రారంభం. స్కూల్ వ్యాన్ సదుపాయం.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#d6157a">
-<link rel="canonical" href="https://oasis-pre-school-academy.vercel.app/te">
-<link rel="alternate" hreflang="en-IN" href="https://oasis-pre-school-academy.vercel.app/">
-<link rel="alternate" hreflang="te-IN" href="https://oasis-pre-school-academy.vercel.app/te">
-<link rel="alternate" hreflang="x-default" href="https://oasis-pre-school-academy.vercel.app/">
+<link rel="canonical" href="https://oasis-psa-school-website.vercel.app/te">
+<link rel="alternate" hreflang="en-IN" href="https://oasis-psa-school-website.vercel.app/">
+<link rel="alternate" hreflang="te-IN" href="https://oasis-psa-school-website.vercel.app/te">
+<link rel="alternate" hreflang="x-default" href="https://oasis-psa-school-website.vercel.app/">
 <link rel="icon" type="image/png" href="/logo-icon.png">
 <link rel="apple-touch-icon" href="/logo-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Oasis Pre School Academy">
+<meta property="og:site_name" content="Oasis Preschool Academy">
 <meta property="og:title" content="ఒయాసిస్ ప్రీస్కూల్ అకాడమీ | కుర్మన్నపాలెం, విశాఖపట్నం ప్లే స్కూల్">
 <meta property="og:description" content="కుర్మన్నపాలెం, విశాఖపట్నంలో ఒయాసిస్ ప్రీస్కూల్ అకాడమీ — ప్లేగ్రూప్, నర్సరీ, LKG, UKG. గాజువాక, దువ్వాడ దగ్గర. 2026–27 అడ్మిషన్లు ప్రారంభం. స్కూల్ వ్యాన్ సదుపాయం.">
-<meta property="og:url" content="https://oasis-pre-school-academy.vercel.app/te">
-<meta property="og:image" content="https://oasis-pre-school-academy.vercel.app/og-image.jpg">
+<meta property="og:url" content="https://oasis-psa-school-website.vercel.app/te">
+<meta property="og:image" content="https://oasis-psa-school-website.vercel.app/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Oasis Pre School Academy logo – Growing roots to flying wings">
+<meta property="og:image:alt" content="Oasis Preschool Academy logo – Growing roots to flying wings">
 <meta property="og:locale" content="te_IN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ఒయాసిస్ ప్రీస్కూల్ అకాడమీ | కుర్మన్నపాలెం, విశాఖపట్నం ప్లే స్కూల్">
 <meta name="twitter:description" content="కుర్మన్నపాలెం, విశాఖపట్నంలో ఒయాసిస్ ప్రీస్కూల్ అకాడమీ — ప్లేగ్రూప్, నర్సరీ, LKG, UKG. గాజువాక, దువ్వాడ దగ్గర. 2026–27 అడ్మిషన్లు ప్రారంభం. స్కూల్ వ్యాన్ సదుపాయం.">
-<meta name="twitter:image" content="https://oasis-pre-school-academy.vercel.app/og-image.jpg">
+<meta name="twitter:image" content="https://oasis-psa-school-website.vercel.app/og-image.jpg">
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@type": "WebPage",
- "@id": "https://oasis-pre-school-academy.vercel.app/te#page",
- "url": "https://oasis-pre-school-academy.vercel.app/te",
+ "@id": "https://oasis-psa-school-website.vercel.app/te#page",
+ "url": "https://oasis-psa-school-website.vercel.app/te",
  "name": "ఒయాసిస్ ప్రీస్కూల్ అకాడమీ | కుర్మన్నపాలెం, విశాఖపట్నం ప్లే స్కూల్",
  "description": "కుర్మన్నపాలెం, విశాఖపట్నంలో ఒయాసిస్ ప్రీస్కూల్ అకాడమీ — ప్లేగ్రూప్, నర్సరీ, LKG, UKG. గాజువాక, దువ్వాడ దగ్గర. 2026–27 అడ్మిషన్లు ప్రారంభం. స్కూల్ వ్యాన్ సదుపాయం.",
  "inLanguage": "te-IN",
  "about": {
-  "@id": "https://oasis-pre-school-academy.vercel.app/#school"
+  "@id": "https://oasis-psa-school-website.vercel.app/#school"
  },
  "isPartOf": {
   "@type": "WebSite",
-  "url": "https://oasis-pre-school-academy.vercel.app/",
-  "name": "Oasis Pre School Academy"
+  "url": "https://oasis-psa-school-website.vercel.app/",
+  "name": "Oasis Preschool Academy"
  }
 }</script>
 <script type="application/ld+json">{
@@ -52,14 +52,14 @@
   {
    "@type": "ListItem",
    "position": 1,
-   "name": "Oasis Pre School Academy",
-   "item": "https://oasis-pre-school-academy.vercel.app/"
+   "name": "Oasis Preschool Academy",
+   "item": "https://oasis-psa-school-website.vercel.app/"
   },
   {
    "@type": "ListItem",
    "position": 2,
    "name": "తెలుగు",
-   "item": "https://oasis-pre-school-academy.vercel.app/te"
+   "item": "https://oasis-psa-school-website.vercel.app/te"
   }
  ]
 }</script>
@@ -109,7 +109,7 @@
 </head>
 <body class="te">
 <header><div class="wrap">
-<a class="brand" href="/" aria-label="Oasis Pre School Academy హోమ్"><img src="/logo-web.png" width="400" height="106" alt="Oasis Pre School Academy"></a>
+<a class="brand" href="/" aria-label="Oasis Preschool Academy హోమ్"><img src="/logo-web.png" width="400" height="106" alt="Oasis Preschool Academy"></a>
 <nav class="hdr-links" aria-label="Main"><a href="/#classes">తరగతులు</a><a href="/admissions">అడ్మిషన్లు</a><a href="/">English</a><a class="cta" href="tel:+918374520722">కాల్ చేయండి</a></nav>
 </div></header>
 <main class="wrap">
@@ -151,8 +151,8 @@
 <section><h2>తరచుగా అడిగే ప్రశ్నలు</h2><details><summary>ఒయాసిస్ ప్రీస్కూల్ ఎక్కడ ఉంది?</summary><p>కుర్మన్నపాలెం, విశాఖపట్నం 530046 — గాజువాక, దువ్వాడకు దగ్గరలో.</p></details><details><summary>ఏ తరగతులు ఉన్నాయి?</summary><p>ప్లేగ్రూప్ (1½–3 సం.), నర్సరీ (3–4 సం.), LKG (4–5 సం.), UKG (5–6 సం.).</p></details><details><summary>2026–27 అడ్మిషన్లు ఉన్నాయా?</summary><p>అవును. 83745 20722 కు కాల్ లేదా వాట్సాప్ చేయండి.</p></details><details><summary>స్కూల్ వ్యాన్ ఉందా?</summary><p>అవును. కుర్మన్నపాలెం నుండి దువ్వాడ వరకు వ్యాన్ నడుస్తుంది.</p></details></section>
 </main>
 <footer><div class="wrap">
-<nav aria-label="More pages"><a href="/">Oasis Pre School Academy</a><a href="/admissions">Admissions 2026–27</a><a href="/preschool-gajuwaka">Preschool near Gajuwaka</a><a href="/preschool-duvvada">Preschool near Duvvada</a><a href="/te" lang="te">తెలుగు</a></nav>
-<p>© 2026 Oasis Pre School Academy · కుర్మన్నపాలెం, విశాఖపట్నం · <a href="tel:+918374520766">83745 20766</a> · <a href="tel:+918374520722">83745 20722</a> · <a href="mailto:oasispsa@gmail.com">oasispsa@gmail.com</a></p>
+<nav aria-label="More pages"><a href="/">Oasis Preschool Academy</a><a href="/admissions">Admissions 2026–27</a><a href="/preschool-gajuwaka">Preschool near Gajuwaka</a><a href="/preschool-duvvada">Preschool near Duvvada</a><a href="/te" lang="te">తెలుగు</a></nav>
+<p>© 2026 Oasis Preschool Academy · కుర్మన్నపాలెం, విశాఖపట్నం · <a href="tel:+918374520766">83745 20766</a> · <a href="tel:+918374520722">83745 20722</a> · <a href="mailto:oasispsa@gmail.com">oasispsa@gmail.com</a></p>
 </div></footer>
 </body>
 </html>

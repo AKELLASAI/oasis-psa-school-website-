@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oasis-psa-school-website.vercel.app/sitemap.xml
+Sitemap: https://oasis-pre-school-academy.vercel.app/sitemap.xml
